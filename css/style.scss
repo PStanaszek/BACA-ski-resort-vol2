@@ -4,7 +4,7 @@
     src: url('fonts/Steelworks Vintage Demo.otf');
     /*URL to font*/
 }
-$border: none;
+$border: 1px solid white;
 
 @mixin parent-flex($direction, $wrap){
     display: flex;
@@ -12,6 +12,7 @@ $border: none;
     justify-content: space-around;
     flex-direction: $direction; 
     flex-wrap: $wrap;
+    text-decoration: none;
     
 
 }
@@ -26,10 +27,7 @@ $border: none;
 @mixin container{
     display: flex;
     flex-direction: row;
-    justify-content:center;
-    flex-flow: row;
     border: $border; 
-    align-content: stretch;
     height: 100%;
     max-height: 100vw;
 
@@ -39,6 +37,7 @@ body{
     margin: 0px;
     max-height: 100vw;
     background-color: gray;
+    font-family: 'Bellefair', serif;
 }
 
 
@@ -65,7 +64,7 @@ nav{
 
 
 }
-ul{
+.top-nav{
     @include parent-flex(row, wrap);
     list-style-type: none;
     border: $border;
@@ -106,7 +105,7 @@ ul{
         flex-direction: column;
         width: 100%;
     }
-    ul{
+    .top-nav{
         @include parent-flex(column, wrap);
     }
 
@@ -172,12 +171,40 @@ ul{
 
 .container-center{
     @include container;
-    width: 55%;
+    width: 65%;
 }
 
 .container-right{
     @include container;
-    width: 25%;
+}
+
+.right-nav{
+     @include parent-flex(column, nowrap);
+     justify-content: center;
+     align-content:space-between;
+     border:$border;
+     width: 100%;
+    li{
+        @include nav-item;
+        justify-content: center;
+        align-content: center;
+        margin: 0px;
+        width: 100%;
+        height: 100px;
+        font-size: 20px;
+        border:$border;
+        a{
+            @include nav-item;
+            text-decoration: none;
+            color: black;
+            flex-direction: column;
+        }
+        img{
+            width: 60px;
+            height: 100%;
+        }
+    }
+    
 }
 
 
