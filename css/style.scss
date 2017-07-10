@@ -1,0 +1,185 @@
+@font-face {
+    font-family: 'Steelworks Vintage Demo';
+    /*a name to be used later*/
+    src: url('fonts/Steelworks Vintage Demo.otf');
+    /*URL to font*/
+}
+$border: none;
+
+@mixin parent-flex($direction, $wrap){
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: $direction; 
+    flex-wrap: $wrap;
+    
+
+}
+
+@mixin nav-item{
+    display: flex;
+    align-items:center;
+    flex-wrap: wrap;
+
+}
+
+@mixin container{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-flow: row;
+    border: $border; 
+    align-content: stretch;
+    height: 100%;
+    max-height: 100vw;
+
+}
+
+body{
+    margin: 0px;
+    max-height: 100vw;
+    background-color: gray;
+}
+
+
+
+/*header style*/
+nav{
+    @include parent-flex(row, nowrap);
+    background: black;
+    padding-bottom: 5px;
+
+}
+.logo{
+   @include parent-flex(row, nowrap);
+    justify-content: flex-start;
+    width: 40%;
+    margin: 5px 40px 0px 0px;
+    border: $border;
+        img{
+            align-content: flex-start;
+            width: 300px;
+            height: 100%;
+            padding: 0 10px 0 10px;
+    }
+
+
+}
+ul{
+    @include parent-flex(row, wrap);
+    list-style-type: none;
+    border: $border;
+    width: 60%;
+    padding: 5px;
+    margin: 5px 10px 0px 50px;
+    font-family: 'Bellefair', serif;
+    letter-spacing: 2px;
+    li{
+        @include nav-item;
+        border: $border;
+        justify-content: space-around;
+        /*height: 100px;*/
+        align-content: center;
+        color: whitesmoke;
+        border-bottom: 3px solid transparent;    
+        a{
+            border: $border;
+            font-size: 20px;
+            color: whitesmoke;
+            color: white;
+            text-decoration: none;
+            padding: 0px 5px 0px 5px; 
+
+        }
+
+    }
+    a:hover{
+        border-bottom: 3px solid white;
+        color: rgba(215, 137, 44, 0.9);
+        
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    nav{
+        flex-direction: column;
+        width: 100%;
+    }
+    ul{
+        @include parent-flex(column, wrap);
+    }
+
+    .logo{
+        width: 100%;
+        font-size: 20px;
+        letter-spacing: 3px;
+        align-content: center;
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid white;
+        padding-bottom: 3px;
+        margin: 5px 0px 0px 0px;
+        a{
+            align-content: flex-start;
+            align-self: flex-end;
+            font-size: 25px;    
+            font-weight: 800;
+            color: snow;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+
+
+        }
+        span{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            align-content:space-between;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            
+
+            p{
+                margin-top: 0px;
+
+            }
+            .logo-second{
+                font-size: 14px;
+                margin-top: -50px;
+                margin-bottom: -0px;
+
+
+
+            }  
+        }
+
+    }
+
+}
+
+/*header style*/
+
+.container{
+    @include container;
+}
+
+.container-left{
+    @include container;
+    width: 20%;
+}
+
+.container-center{
+    @include container;
+    width: 55%;
+}
+
+.container-right{
+    @include container;
+    width: 25%;
+}
+
+
+
+

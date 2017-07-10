@@ -1,0 +1,159 @@
+@font-face {
+  font-family: 'Steelworks Vintage Demo';
+  /*a name to be used later*/
+  src: url("fonts/Steelworks Vintage Demo.otf");
+  /*URL to font*/ }
+body {
+  margin: 0px;
+  max-height: 100vw;
+  background-color: gray; }
+
+/*header style*/
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background: black;
+  padding-bottom: 5px; }
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: 40%;
+  margin: 5px 40px 0px 0px;
+  border: none; }
+  .logo img {
+    align-content: flex-start;
+    width: 300px;
+    height: 100%;
+    padding: 0 10px 0 10px; }
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style-type: none;
+  border: none;
+  width: 60%;
+  padding: 5px;
+  margin: 5px 10px 0px 50px;
+  font-family: 'Bellefair', serif;
+  letter-spacing: 2px; }
+  ul li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border: none;
+    justify-content: space-around;
+    /*height: 100px;*/
+    align-content: center;
+    color: whitesmoke;
+    border-bottom: 3px solid transparent; }
+    ul li a {
+      border: none;
+      font-size: 20px;
+      color: whitesmoke;
+      color: white;
+      text-decoration: none;
+      padding: 0px 5px 0px 5px; }
+  ul a:hover {
+    border-bottom: 3px solid white;
+    color: rgba(215, 137, 44, 0.9); }
+
+@media only screen and (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    width: 100%; }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap; }
+
+  .logo {
+    width: 100%;
+    font-size: 20px;
+    letter-spacing: 3px;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 3px;
+    margin: 5px 0px 0px 0px; }
+    .logo a {
+      align-content: flex-start;
+      align-self: flex-end;
+      font-size: 25px;
+      font-weight: 800;
+      color: snow;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center; }
+    .logo span {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-content: space-between;
+      align-items: flex-start;
+      flex-wrap: nowrap; }
+      .logo span p {
+        margin-top: 0px; }
+      .logo span .logo-second {
+        font-size: 14px;
+        margin-top: -50px;
+        margin-bottom: -0px; } }
+/*header style*/
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: row;
+  border: none;
+  align-content: stretch;
+  height: 100%;
+  max-height: 100vw; }
+
+.container-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: row;
+  border: none;
+  align-content: stretch;
+  height: 100%;
+  max-height: 100vw;
+  width: 20%; }
+
+.container-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: row;
+  border: none;
+  align-content: stretch;
+  height: 100%;
+  max-height: 100vw;
+  width: 55%; }
+
+.container-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: row;
+  border: none;
+  align-content: stretch;
+  height: 100%;
+  max-height: 100vw;
+  width: 25%; }
+
+/*# sourceMappingURL=style.css.map */
