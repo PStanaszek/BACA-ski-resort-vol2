@@ -1,13 +1,8 @@
-@font-face {
-  font-family: 'Akrobat-Regular';
-  /*a name to be used later*/
-  src: url("fonts/Akrobat-Regular.otf");
-  /*URL to font*/ }
-body {
+html, body {
   margin: 0px;
-  max-height: 100vw;
-  font-family: 'Bellefair', serif;
-  background-color: gainsboro; }
+  font-family: 'Quicksand', sans-serif;
+  background-color: gainsboro;
+  height: 100%; }
 
 /*header style*/
 nav {
@@ -20,8 +15,8 @@ nav {
   width: 100%;
   padding: 0%;
   margin-top: 0%;
-  background: black;
-  padding-bottom: 5px; }
+  background: linear-gradient(to right, black, gray);
+  padding-bottom: 0px; }
 
 .logo {
   display: flex;
@@ -56,33 +51,34 @@ nav {
   list-style-type: none;
   border: none;
   width: 100%;
-  padding: 0px 0px 0px 10px;
-  margin: 10px 20px 10px 10px;
-  font-family: 'Bellefair', serif;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 20px 0px 10px;
   letter-spacing: 2px; }
   .top-nav li {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 50px;
+    height: 70px;
+    width: 70px;
     align-content: center;
     color: whitesmoke;
     border-bottom: 3px solid transparent;
-    transform: skewX(-20deg);
+    /*transform: skewX(-20deg);*/
     border-right: 0.5px solid;
     border-right-color: #454545;
     padding: 0 3% 0 3%;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
     /*border-left: 2px solid;
     border-left-color: lighten($border-color, 27%);*/ }
     .top-nav li a {
       border: none;
-      font-size: 20px;
+      font-size: 15px;
       color: whitesmoke;
       color: white;
       text-decoration: none;
       padding: 0px 5px 0px 5px;
-      transform: skewX(20deg); }
+      /*transform: skewX(20deg);*/ }
   .top-nav li:hover {
     background-color: #454545;
     color: #618a2b; }
@@ -143,33 +139,32 @@ nav {
   display: flex;
   flex-direction: row;
   border: none;
-  height: 100%;
-  max-height: 100vw;
-  height: 1000px; }
+  /*height: 100%;*/
+  height: 90vh; }
 
 .container-left {
   display: flex;
   flex-direction: row;
   border: none;
-  height: 100%;
-  max-height: 100vw;
+  /*height: 100%;*/
+  height: 90vh;
   width: 10%; }
 
 .container-center {
   display: flex;
   flex-direction: row;
   border: none;
-  height: 100%;
-  max-height: 100vw;
-  width: 75%; }
+  /*height: 100%;*/
+  height: 90vh;
+  width: 82%; }
 
 .container-right {
   display: flex;
   flex-direction: row;
   border: none;
-  height: 100%;
-  max-height: 100vw;
-  width: 15%; }
+  /*height: 100%;*/
+  height: 90vh;
+  width: 8%; }
 
 .right-nav {
   display: flex;
@@ -184,8 +179,8 @@ nav {
   justify-content: flex-start;
   align-content: flex-start;
   border: none;
-  font-family: 'Akrobat-Regular';
-  flex-direction: column; }
+  flex-direction: column;
+  padding-top: 40px; }
   .right-nav li {
     display: flex;
     align-items: center;
@@ -195,9 +190,10 @@ nav {
     margin: 0px;
     width: 100%;
     height: 100px;
-    font-size: 1.4vw;
+    font-size: 1vw;
     border: none;
-    transition: margin-right .35s ease-in-out; }
+    transition: margin-right .35s ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
     .right-nav li a {
       display: flex;
       align-items: center;
@@ -209,20 +205,21 @@ nav {
     .right-nav li img {
       width: 40%;
       height: 100%; }
-    .right-nav li:nth-child(0) {
-      background-color: #618a2b; }
     .right-nav li:nth-child(1) {
-      background-color: #7aad36; }
+      background: linear-gradient(to right top, #e98c39, #dc7418); }
     .right-nav li:nth-child(2) {
-      background-color: #91c74a; }
+      background: linear-gradient(to right top, #eea462, #dc7418); }
     .right-nav li:nth-child(3) {
-      background-color: #a6d26d; }
+      background: linear-gradient(to right top, #f2bc8b, #dc7418); }
     .right-nav li:nth-child(4) {
-      background-color: #8ac33e; }
+      /*background-color: darken($gradient, 9%*($i/3));*/
+      background: linear-gradient(to right top, #efa96b, #dc7418); }
     .right-nav li:nth-child(5) {
-      background-color: #82b93a; }
+      /*background-color: darken($gradient, 9%*($i/3));*/
+      background: linear-gradient(to right top, #f1b682, #dc7418); }
     .right-nav li:nth-child(6) {
-      background-color: #7aad36; }
+      /*background-color: darken($gradient, 9%*($i/3));*/
+      background: linear-gradient(to right top, #f4c499, #dc7418); }
   .right-nav li:hover {
     opacity: 0.7;
     width: 100%;
@@ -241,8 +238,14 @@ nav {
   justify-content: flex-start;
   align-content: flex-start;
   border: none;
-  background-color: #618A8F;
-  text-align: center; }
+  background: url(/img/737.jpg) no-repeat center center;
+  background-size: cover;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  justify-content: space-between;
+  align-content: flex-start;
+  color: white; }
   .weather div {
     display: flex;
     align-items: center;
@@ -264,6 +267,16 @@ nav {
       margin-top: 2px;
       border: 1px solid black; }
   .weather img {
-    width: 30%; }
+    height: 40px;
+    padding-right: 5px; }
+
+.full-date {
+  font-weight: 700; }
+
+.icon-and-temp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
 
 /*# sourceMappingURL=style.css.map */
