@@ -1,7 +1,27 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, caption, tfoot, thead,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: middle;
+}
+
 
 $border: none;
 $gradient:0;
-$right-nav-color: #dc7418;
+$right-nav-color: #466487;
 $border-color:black;
 
 
@@ -40,6 +60,7 @@ $border-color:black;
     justify-content:flex-start;
     align-content:flex-start;
     border:$border;
+    margin-top: 50px;
 }
 
 html,body{
@@ -47,6 +68,7 @@ html,body{
     font-family: 'Quicksand', sans-serif;
     background-color: gainsboro;
     height:100%;
+    box-sizing: border-box;
 }
 
 
@@ -183,29 +205,118 @@ nav{
 
 .container{
     @include container;
-   
+
 }
 
 .container-left{
     @include container;
-    width: 10%;
+    width: 8%;
 }
 
 .container-center{
     @include container;
-    width: 82%;
+    width: 84%;
 }
 
 .container-right{
     @include container;
     width: 8%;
-    
+
 }
+
+.main-container{
+    background: url(/img/backgrounds/snow.jpeg) no-repeat center center;
+    background-size: cover;   
+}
+
+.content{
+    @include container;
+    align-content:center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+}
+.content-title{
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 50px 30px 50px;
+    color: #FFA864;
+    font-size: 40px;
+    text-shadow: 3px 0px 1px rgba(0, 0, 0, 1);
+
+}
+.price-container{
+    @include container;
+    align-content:center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: row;
+
+    .price{
+        @include side-bar; 
+        background-color: white;
+        align-content: space-between;
+        justify-content: space-between;
+        height: 70%;
+        list-style-type: none;
+        text-align: center;
+        margin: 0 2.5% 0 2.5%;
+        width:25%;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 1);
+        /*padding: 5px 5px 5px 5px;*/
+        transition-duration: 10s;
+
+        .price-item{
+            font-size: 28px;
+            width: 100%;
+            /*padding: 5px 0px 5px 0px;*/
+            height: 12.5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .price-item:nth-child(odd){
+            font-size: 22px;
+            background-color: grey;
+            background: linear-gradient(to bottom ,white, lightgray);
+        }
+        .price-item:nth-child(even){
+            font-size: 26px;
+            $gradient: darken($right-nav-color, 10%);
+            background: linear-gradient(to right top, $gradient, lighten($right-nav-color, 12%));
+            color: white;
+            text-shadow: 3px 0px 1px rgba(0, 0, 0, 1);
+        }
+        .price-item:nth-child(1){
+            font-size: 22px;
+            border-radius: 20px 20px 0px 0px;
+
+        }
+        .price-item:nth-child(1), .price-item:nth-child(2){
+            $gradient: darken($right-nav-color, 30%);
+            background: linear-gradient(to right, $gradient, lighten($right-nav-color, 10%));
+            color: white;
+            text-shadow: 3px 0px 1px rgba(0, 0, 0, 1);
+
+        }
+
+        .price-item:last-of-type{
+            font-size: 26px;
+            border-radius: 0px 0px 20px 20px;
+
+        }
+
+    }
+}
+
+
 
 .right-nav{   
     @include side-bar;
     flex-direction: column;
-    padding-top: 40px;
 
 
     li{
@@ -261,7 +372,7 @@ nav{
 
 .weather{
     @include side-bar;
-    background: url(/img/737.jpg) no-repeat center center;
+    background: url(/img/backgrounds/weather2.jpg) no-repeat center center;
     background-size: cover;
     font-size: 14px;
     text-align: center;
@@ -269,6 +380,8 @@ nav{
     justify-content:space-between;
     align-content:flex-start;
     color: white;
+    height: 400px;
+    padding: 7px;
 
 
     div{
@@ -307,6 +420,56 @@ nav{
     justify-content: space-around;
     align-items: center;
 }
+
+.temp{
+    font-size: 22px;
+}
+
+
+/*index table*/
+.lift-container{
+    display: flex;
+    align-content:space-around;
+    justify-content: center;
+    width: 100%;
+    flex-direction:column;
+}
+.conditions, .skilift{
+    width: 90%;
+    overflow: hidden;
+    margin: 20px auto;
+    box-sizing:border-box;
+    img{
+        height: 30px;
+        width: auto;
+    }
+    tr,td,th{
+        padding: 5px;
+        text-align: center;
+        font-size: 1vw;
+    }
+    tr{
+    font-size: 1vw;
+    }
+    th{
+        vertical-align: middle;
+        $gradient: darken($right-nav-color, 30%);
+        background: linear-gradient(to right, $gradient, lighten($right-nav-color, 10%));
+        color: white;
+        text-shadow: 3px 0px 1px rgba(0, 0, 0, 1);
+        height: 100%;
+    }
+    td{
+        background: linear-gradient(to bottom ,white, lightgray);
+    }
+}
+
+.conditions th:nth-child(1){
+    display:table-cell; 
+    vertical-align:middle;
+}
+
+
 
 
 

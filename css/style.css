@@ -1,8 +1,28 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, caption, tfoot, thead,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: middle; }
+
 html, body {
   margin: 0px;
   font-family: 'Quicksand', sans-serif;
   background-color: gainsboro;
-  height: 100%; }
+  height: 100%;
+  box-sizing: border-box; }
 
 /*header style*/
 nav {
@@ -148,7 +168,7 @@ nav {
   border: none;
   /*height: 100%;*/
   height: 90vh;
-  width: 10%; }
+  width: 8%; }
 
 .container-center {
   display: flex;
@@ -156,7 +176,7 @@ nav {
   border: none;
   /*height: 100%;*/
   height: 90vh;
-  width: 82%; }
+  width: 84%; }
 
 .container-right {
   display: flex;
@@ -165,6 +185,94 @@ nav {
   /*height: 100%;*/
   height: 90vh;
   width: 8%; }
+
+.main-container {
+  background: url(/img/backgrounds/snow.jpeg) no-repeat center center;
+  background-size: cover; }
+
+.content {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  /*height: 100%;*/
+  height: 90vh;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column; }
+
+.content-title {
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 50px 30px 50px;
+  color: #FFA864;
+  font-size: 40px;
+  text-shadow: 3px 0px 1px black; }
+
+.price-container {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  /*height: 100%;*/
+  height: 90vh;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: row; }
+  .price-container .price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-decoration: none;
+    width: 100%;
+    padding: 0%;
+    margin-top: 0%;
+    justify-content: flex-start;
+    align-content: flex-start;
+    border: none;
+    margin-top: 50px;
+    background-color: white;
+    align-content: space-between;
+    justify-content: space-between;
+    height: 70%;
+    list-style-type: none;
+    text-align: center;
+    margin: 0 2.5% 0 2.5%;
+    width: 25%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 black;
+    /*padding: 5px 5px 5px 5px;*/
+    transition-duration: 10s; }
+    .price-container .price .price-item {
+      font-size: 28px;
+      width: 100%;
+      /*padding: 5px 0px 5px 0px;*/
+      height: 12.5%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .price-container .price .price-item:nth-child(odd) {
+      font-size: 22px;
+      background-color: grey;
+      background: linear-gradient(to bottom, white, lightgray); }
+    .price-container .price .price-item:nth-child(even) {
+      font-size: 26px;
+      background: linear-gradient(to right top, #354b65, #5e82ac);
+      color: white;
+      text-shadow: 3px 0px 1px black; }
+    .price-container .price .price-item:nth-child(1) {
+      font-size: 22px;
+      border-radius: 20px 20px 0px 0px; }
+    .price-container .price .price-item:nth-child(1), .price-container .price .price-item:nth-child(2) {
+      background: linear-gradient(to right, #121922, #587da8);
+      color: white;
+      text-shadow: 3px 0px 1px black; }
+    .price-container .price .price-item:last-of-type {
+      font-size: 26px;
+      border-radius: 0px 0px 20px 20px; }
 
 .right-nav {
   display: flex;
@@ -179,8 +287,8 @@ nav {
   justify-content: flex-start;
   align-content: flex-start;
   border: none;
-  flex-direction: column;
-  padding-top: 40px; }
+  margin-top: 50px;
+  flex-direction: column; }
   .right-nav li {
     display: flex;
     align-items: center;
@@ -206,20 +314,20 @@ nav {
       width: 40%;
       height: 100%; }
     .right-nav li:nth-child(1) {
-      background: linear-gradient(to right top, #e98c39, #dc7418); }
+      background: linear-gradient(to right top, #567aa5, #466487); }
     .right-nav li:nth-child(2) {
-      background: linear-gradient(to right top, #eea462, #dc7418); }
+      background: linear-gradient(to right top, #7392b6, #466487); }
     .right-nav li:nth-child(3) {
-      background: linear-gradient(to right top, #f2bc8b, #dc7418); }
+      background: linear-gradient(to right top, #91a9c6, #466487); }
     .right-nav li:nth-child(4) {
       /*background-color: darken($gradient, 9%*($i/3));*/
-      background: linear-gradient(to right top, #efa96b, #dc7418); }
+      background: linear-gradient(to right top, #7997ba, #466487); }
     .right-nav li:nth-child(5) {
       /*background-color: darken($gradient, 9%*($i/3));*/
-      background: linear-gradient(to right top, #f1b682, #dc7418); }
+      background: linear-gradient(to right top, #8aa4c2, #466487); }
     .right-nav li:nth-child(6) {
       /*background-color: darken($gradient, 9%*($i/3));*/
-      background: linear-gradient(to right top, #f4c499, #dc7418); }
+      background: linear-gradient(to right top, #9bb1cb, #466487); }
   .right-nav li:hover {
     opacity: 0.7;
     width: 100%;
@@ -238,14 +346,17 @@ nav {
   justify-content: flex-start;
   align-content: flex-start;
   border: none;
-  background: url(/img/737.jpg) no-repeat center center;
+  margin-top: 50px;
+  background: url(/img/backgrounds/weather2.jpg) no-repeat center center;
   background-size: cover;
   font-size: 14px;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   justify-content: space-between;
   align-content: flex-start;
-  color: white; }
+  color: white;
+  height: 400px;
+  padding: 7px; }
   .weather div {
     display: flex;
     align-items: center;
@@ -278,5 +389,43 @@ nav {
   flex-direction: row;
   justify-content: space-around;
   align-items: center; }
+
+.temp {
+  font-size: 22px; }
+
+/*index table*/
+.lift-container {
+  display: flex;
+  align-content: space-around;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column; }
+
+.conditions, .skilift {
+  width: 90%;
+  overflow: hidden;
+  margin: 20px auto;
+  box-sizing: border-box; }
+  .conditions img, .skilift img {
+    height: 30px;
+    width: auto; }
+  .conditions tr, .conditions td, .conditions th, .skilift tr, .skilift td, .skilift th {
+    padding: 5px;
+    text-align: center;
+    font-size: 1vw; }
+  .conditions tr, .skilift tr {
+    font-size: 1vw; }
+  .conditions th, .skilift th {
+    vertical-align: middle;
+    background: linear-gradient(to right, #121922, #587da8);
+    color: white;
+    text-shadow: 3px 0px 1px black;
+    height: 100%; }
+  .conditions td, .skilift td {
+    background: linear-gradient(to bottom, white, lightgray); }
+
+.conditions th:nth-child(1) {
+  display: table-cell;
+  vertical-align: middle; }
 
 /*# sourceMappingURL=style.css.map */
