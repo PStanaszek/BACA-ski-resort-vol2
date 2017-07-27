@@ -1,4 +1,3 @@
-
 (function weatherForecast(){
     var id = "c46a632da27f87f7efe0ff1745ef7149";
     var req = new XMLHttpRequest();
@@ -7,7 +6,6 @@
         if (req.readyState == 4) {
             if(req.status == 200){
                 var json = JSON.parse(req.responseText),
-                    name = document.querySelector(".name"),
                     image = document.querySelectorAll(".current-weather > img"),
                     description = document.querySelectorAll(".description"),
                     temp = document.querySelectorAll(".temp"),
@@ -18,15 +16,15 @@
                     d = new Date(),
                     t = new Date(d.getTime()+1000*60*60*24),
                     day = d.getDay();
-                    day_number = d.getDate(),
+                day_number = d.getDate(),
                     month_number = d.getMonth() + 1,
                     day_name = days[day],
                     dateArr = document.querySelectorAll(".date");
-                    dayArr = document.querySelectorAll(".day");
+                dayArr = document.querySelectorAll(".day");
 
-                    console.log(json);/*usunąc*/
-                    name.textContent = json.city.name;
-                for(var i = 0; i < 4; i++){
+                console.log(json);/*usunąc*/
+                name.textContent = json.city.name;
+                for(var i = 0; i < 3; i++){
                     description[i].textContent = json.list[i].weather[0].description
 
                     temp[i].innerHTML = Math.floor(json.list[i].temp.day) + " &#8451";
@@ -57,3 +55,94 @@
     };
     req.send(null);
 })();
+
+/*var ss = document.querySelector("#ak");
+            ss.addEventListener("click", function(){
+            console.log("hello");
+            });*/
+
+function newHTML(){
+
+    var navItem = document.getElementsByClassName('nav-bar');
+    for(var i = 0; i < navItem.length; i++) {
+        var elem = navItem[i];   
+        elem.onclick = function(event) {
+            event.preventDefault();
+            var url = this.getAttribute("href");
+
+            var xhr = new XMLHttpRequest();
+            console.log("dsa");
+            xhr.onreadystatechange = function(){
+                console.log("dsa");
+                if(xhr.status == 200){
+                   
+
+                    document.querySelector(".content").innerHTML = xhr.responseText;
+                    document.querySelector(".content > div").classList.add("animated","pulse");
+                    console.log(document.querySelector(".content > div").classList)
+                    if( url = "gallery.html"){
+                    var viewer = new Viewer(document.getElementById('images'));
+                    Viewer.setDefaults(options)   
+                    }
+                    
+                }
+
+            }
+            xhr.open('GET', url, true);
+            xhr.send(null); 
+        }
+
+
+    };
+};
+
+newHTML();
+
+
+/*(function dropDownNav(){
+    window.onload = function(){
+        window.addEventListener("resize", function() {
+            var windowWidth = window.innerWidth;
+            var dropDownNavButton = document.querySelector(".dropDownNav");
+            var lineNav =  document.querySelector("nav > ul");
+            if ( windowWidth < 880){
+                if(lineNav.classList.contains('top-nav')){
+                    lineNav.classList.remove('top-nav');
+
+                }
+                dropDownNavButton.style.display = "block";
+                lineNav.classList.add('columnNavHide');
+                console.log(lineNav.className); 
+                dropDownNavButton.onclick = function(){ 
+                    
+                    lineNav.classList.toggle('columnNavHide');
+                    lineNav.classList.toggle('columnNavShow');
+
+                    console.log(lineNav.className); 
+                }
+            }else{
+                dropDownNavButton.style.display = "none";
+                if(lineNav.classList.contains("columnNavHide") || lineNav.classList.contains("columnNavShow")){
+                    lineNav.className = "";
+                    lineNav.classList.add('top-nav');
+                    console.log(lineNav.classList);
+                }
+
+
+
+            }
+
+        });
+
+    }
+
+		
+		
+
+
+})();*/
+
+/*photo viewer*/
+
+/*photo viewer*/
+

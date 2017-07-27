@@ -21,9 +21,14 @@ time, mark, audio, video {
 
 $border: none;
 $gradient:0;
-$right-nav-color: #466487;
+$right-nav-color: #8FCFEB;
 $border-color:black;
 
+@mixin list-style{
+    text-decoration: none;
+    list-style-type: none;
+color: white;
+}
 
 @mixin parent-flex($direction, $wrap){
     display: flex;
@@ -48,12 +53,13 @@ $border-color:black;
 
 @mixin container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border: $border; 
     /*height: 100%;*/
     height:90vh;
 
 }
+
 
 @mixin side-bar{
     @include parent-flex(column, nowrap);    
@@ -63,12 +69,50 @@ $border-color:black;
     margin-top: 50px;
 }
 
+/*media queries mixins */
+@mixin xs{
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+        @content;
+    } 
+}
+
+@mixin sm{
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+        @content;   
+    }
+}
+
+@mixin md{
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 880px) {
+        @content;
+    }
+}
+
+@mixin lg{
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+        @content;
+    }
+
+}
+
+
+
+
+
+
+
+
 html,body{
     margin: 0px;
     font-family: 'Quicksand', sans-serif;
     background-color: gainsboro;
     height:100%;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 
@@ -78,6 +122,10 @@ nav{
     @include parent-flex(row, nowrap);
     background: linear-gradient(to right ,black, gray);
     padding-bottom: 0px;
+    position: fixed;
+    z-index: 1000;
+    justify-content: space-between;
+    /*margin-bottom: 10%;*/
 
 }
 .logo{
@@ -88,7 +136,7 @@ nav{
     border: $border;
     img{
         align-content: flex-start;
-        width: 300px;
+        width: 250px;
         height: 100%;
         padding: 0 10px 0 10px;
     }
@@ -102,12 +150,12 @@ nav{
     border: $border;
     width: 100%;
     padding: 0px 0px 0px 0px;
-    margin: 0px 20px 0px 10px;
+    margin: 0px 20px 0px 2px;
     letter-spacing: 2px;
     li{
         @include nav-item;
         justify-content: space-around;
-        height: 70px;
+        height: 50px;
         width: 70px;
         align-content: center;
         color: whitesmoke;
@@ -121,7 +169,13 @@ nav{
         border-left-color: lighten($border-color, 27%);*/
         a{
             border: $border;
-            font-size: 15px;
+            font-size: 12px; 
+            @include lg{
+                font-size: 18px; 
+            }
+            @include md{
+                font-size: 16px; 
+            }
             color: whitesmoke;
             color: white;
             text-decoration: none;
@@ -133,116 +187,136 @@ nav{
     }
     li:hover{
         background-color: lighten($border-color, 27%);
-        color: #618a2b;
-
-    }
-    li:first-child{
-        border-left: 0.5px solid;
-        border-left-color: lighten($border-color, 27%);   
-    }
-
-}
-
-@media only screen and (max-width: 500px) {
-    nav{
-        flex-direction: column;
-        width: 100%;
-    }
-    .top-nav{
-        @include parent-flex(column, wrap);
-    }
-
-    .logo{
-        width: 100%;
-        font-size: 20px;
-        letter-spacing: 3px;
-        align-content: center;
-        display: flex;
-        justify-content: center;
-        border-bottom: 1px solid white;
-        padding-bottom: 3px;
-        margin: 5px 0px 0px 0px;
         a{
-            align-content: flex-start;
-            align-self: flex-end;
-            font-size: 25px;    
-            font-weight: 800;
-            color: snow;
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
-
-
-        }
-        span{
-            display: flex;
-            justify-content: flex-start;
-            flex-direction: column;
-            align-content:space-between;
-            align-items: flex-start;
-            flex-wrap: nowrap;
-
-
-            p{
-                margin-top: 0px;
-
-            }
-            .logo-second{
-                font-size: 14px;
-                margin-top: -50px;
-                margin-bottom: -0px;
-
-
-
-            }  
+         color: #FFA864;   
         }
 
     }
+    li:last-child{
+        border-right: none;
+        border-left-color: lighten($border-color, 27%);
+ 
+    }
 
 }
+/*responsive menu classes*/
+.dropDownNav{
+    @include list-style;
+    display: none;
+    width: 40px;
+    height: 40px;
+    background-color: lightgray;
+    border: 3px solid darkgray;
+    border-radius: 4px;
+    margin-right: 40px;
+    box-sizing: content-box;
+    cursor: pointer;
+    margin: 2px;
+    
+}
 
-/*header style*/
+.columnNavShow{
+    @include list-style;
+    width: 100%;
+    align-content: center;
+    align-items:stretch;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 55px;
+    right: 0px;
+    /*margin-right: -50%;*/
+    background: linear-gradient(to right, black, gray);
+    li{
+        width: 100%;
+        text-align: center;
+    }
+    li a{
+        @include list-style;
+        width: 400px;
+    }
+    
+    li a:hover{
+    font-weight: 800;
+   }
+
+
+}
+.columnNavHide{
+   display: none; 
+}
+
+.navButtonClicked{
+    padding-top: 120px;
+}
+
+/*end: responsive menu classes*/
+/*end: header style*/
+
+
 
 .container{
-    @include container;
+    /*@include container;*/
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height:90vh;
+    @include lg{
+            flex-direction: row;
+            }
+            @include md{
+                font-size: 30px;
 
+}
 }
 
 .container-left{
-    @include container;
+    /*@include container;*/
     width: 8%;
+    display: none;
 }
-
 .container-center{
     @include container;
-    width: 84%;
+    width: 100%;
 }
 
 .container-right{
-    @include container;
+    
+    /*@include container;
     width: 8%;
-
+*/
 }
 
 .main-container{
     background: url(/img/backgrounds/snow.jpeg) no-repeat center center;
-    background-size: cover;   
+    background-size: cover;
+    padding-top:50px;
+    
 }
 
 .content{
     @include container;
-    align-content:center;
+    align-content:space-around;
+    align-items: center;
     justify-content: center;
     width: 100%;
     flex-direction: column;
 }
 .content-title{
+    width: 70%;
     align-content: center;
     justify-content: center;
     text-align: center;
-    padding: 50px 50px 30px 50px;
+    margin-top: 0px;
+    padding: 20px 50px 30px 50px;
     color: #FFA864;
-    font-size: 40px;
+    font-size: 18px; 
+            @include lg{
+                font-size: 40px; 
+            }
+            @include md{
+                font-size: 30px; 
+            }
     text-shadow: 3px 0px 1px rgba(0, 0, 0, 1);
 
 }
@@ -258,7 +332,7 @@ nav{
         background-color: white;
         align-content: space-between;
         justify-content: space-between;
-        height: 70%;
+        height: 50%;
         list-style-type: none;
         text-align: center;
         margin: 0 2.5% 0 2.5%;
@@ -269,7 +343,6 @@ nav{
         transition-duration: 10s;
 
         .price-item{
-            font-size: 28px;
             width: 100%;
             /*padding: 5px 0px 5px 0px;*/
             height: 12.5%;
@@ -279,19 +352,30 @@ nav{
 
         }
         .price-item:nth-child(odd){
-            font-size: 22px;
+            font-size: 14px; 
+            @include lg{
+                font-size: 22px; 
+            }
+            @include md{
+                font-size: 16px; 
+            }
             background-color: grey;
             background: linear-gradient(to bottom ,white, lightgray);
         }
         .price-item:nth-child(even){
-            font-size: 26px;
+            font-size: 16px; 
+            @include lg{
+                font-size: 24px; 
+            }
+            @include md{
+                font-size: 20px; 
+            }
             $gradient: darken($right-nav-color, 10%);
             background: linear-gradient(to right top, $gradient, lighten($right-nav-color, 12%));
             color: white;
             text-shadow: 3px 0px 1px rgba(0, 0, 0, 1);
         }
         .price-item:nth-child(1){
-            font-size: 22px;
             border-radius: 20px 20px 0px 0px;
 
         }
@@ -304,7 +388,6 @@ nav{
         }
 
         .price-item:last-of-type{
-            font-size: 26px;
             border-radius: 0px 0px 20px 20px;
 
         }
@@ -316,7 +399,13 @@ nav{
 
 .right-nav{   
     @include side-bar;
-    flex-direction: column;
+    flex-direction: row;
+    @include lg{
+        flex-direction: row;
+        }
+        @include md{
+         flex-direction: column;
+        }
 
 
     li{
@@ -326,7 +415,13 @@ nav{
         margin: 0px;
         width: 100%;
         height: 100px;
-        font-size: 1vw;
+        font-size: 12px; 
+        @include lg{
+            font-size: 24px; 
+        }
+        @include md{
+            font-size: 16px; 
+        }
         border:$border;
         transition: margin-right .35s ease-in-out;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -340,8 +435,14 @@ nav{
             text-align: center;
         }
         img{
-            width: 40%;
+            width: 30px;
             height: 100%;
+            @include lg{
+                width: 50px; 
+            }
+            @include md{
+                width: 40px; 
+            }
         }
 
         @for $i from 1 through 3 {
@@ -374,7 +475,13 @@ nav{
     @include side-bar;
     background: url(/img/backgrounds/weather2.jpg) no-repeat center center;
     background-size: cover;
-    font-size: 14px;
+    font-size: 12px; 
+    @include lg{
+        font-size: 22px; 
+    }
+    @include md{
+        font-size: 16px; 
+    }
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     justify-content:space-between;
@@ -404,8 +511,14 @@ nav{
         }
     }
     img{
-        height: 40px;
+        height: 25px;
         padding-right: 5px;
+        @include lg{
+            height: 40px;
+        }
+        @include md{
+            height: 35px; 
+        }
     }
 
 }
@@ -422,7 +535,13 @@ nav{
 }
 
 .temp{
-    font-size: 22px;
+    font-size: 14px; 
+    @include lg{
+        font-size: 26px; 
+    }
+    @include md{
+        font-size: 20px; 
+    }
 }
 
 
@@ -434,8 +553,13 @@ nav{
     width: 100%;
     flex-direction:column;
 }
+.conditions{
+ width: 40%; 
+} 
+.skilift{
+ width: 95%; 
+}
 .conditions, .skilift{
-    width: 90%;
     overflow: hidden;
     margin: 20px auto;
     box-sizing:border-box;
@@ -444,12 +568,19 @@ nav{
         width: auto;
     }
     tr,td,th{
-        padding: 5px;
+        padding: 2px;
         text-align: center;
-        font-size: 1vw;
+        font-size: 10px; 
+    @include lg{
+        font-size: 22px;
+    }
+    @include md{
+        font-size: 18px;
+        padding: 5px; 
+    }
     }
     tr{
-    font-size: 1vw;
+
     }
     th{
         vertical-align: middle;
@@ -464,10 +595,54 @@ nav{
     }
 }
 
+/*gallery styles*/
+#images{
+    @include list-style;
+    @include parent-flex(row, wrap);
+    justify-content:center;
+    width: 100%;
+    align-content: space-around;
+    align-items: flex-end;
+    li{
+        background-color: rgba(0, 0,0, 0.5);
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+        
+    }
+    li:hover{
+        transform: scale(1.1);
+        background-color: rgba(255, 168, 100, 0.9);
+        transition: transform 1s;
+        cursor: pointer;
+        
+        
+    }
+}
+.galleryImg{
+        width: 16vw;
+        height: 12vw;
+     @include lg{
+        width: 12vw;
+        height: 10vw;
+    }
+    @include md{
+        width: 12vw;
+        height: 10vw;
+    }
+}
+.gallery{
+    display:block;
+    width: 90%;
+
+}
+/*
+
 .conditions th:nth-child(1){
     display:table-cell; 
     vertical-align:middle;
 }
+*/
 
 
 
