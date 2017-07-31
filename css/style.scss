@@ -20,14 +20,15 @@ time, mark, audio, video {
 
 
 $border: none;
-$gradient:0;
-$right-nav-color: #8FCFEB;
+$gradient: 0;
+$right-nav-background-color: #333333;
+$right-nav-color: #e75436;
 $border-color:black;
 
 @mixin list-style{
     text-decoration: none;
     list-style-type: none;
-color: white;
+    color: white;
 }
 
 @mixin parent-flex($direction, $wrap){
@@ -55,8 +56,7 @@ color: white;
     display: flex;
     flex-direction: column;
     border: $border; 
-    /*height: 100%;*/
-    height:90vh;
+    height: 100%;
 
 }
 
@@ -110,9 +110,12 @@ html,body{
     margin: 0px;
     font-family: 'Quicksand', sans-serif;
     background-color: gainsboro;
-    height:100%;
+
     box-sizing: border-box;
     text-decoration: none;
+}
+body{
+    min-width: 320px;
 }
 
 
@@ -188,14 +191,14 @@ nav{
     li:hover{
         background-color: lighten($border-color, 27%);
         a{
-         color: #FFA864;   
+            color: #FFA864;   
         }
 
     }
     li:last-child{
         border-right: none;
         border-left-color: lighten($border-color, 27%);
- 
+
     }
 
 }
@@ -212,7 +215,7 @@ nav{
     box-sizing: content-box;
     cursor: pointer;
     margin: 2px;
-    
+
 }
 
 .columnNavShow{
@@ -235,15 +238,15 @@ nav{
         @include list-style;
         width: 400px;
     }
-    
+
     li a:hover{
-    font-weight: 800;
-   }
+        font-weight: 800;
+    }
 
 
 }
 .columnNavHide{
-   display: none; 
+    display: none; 
 }
 
 .navButtonClicked{
@@ -262,12 +265,12 @@ nav{
     flex-direction: column;
     min-height:90vh;
     @include lg{
-            flex-direction: row;
-            }
-            @include md{
-                font-size: 30px;
+        flex-direction: row;
+    }
+    @include md{
+        font-size: 30px;
 
-}
+    }
 }
 
 .container-left{
@@ -281,10 +284,10 @@ nav{
 }
 
 .container-right{
+
+/*    @include container;
+    width: 8%;*/
     
-    /*@include container;
-    width: 8%;
-*/
 }
 
 .main-container{
@@ -292,32 +295,40 @@ nav{
     background-size: cover;
     padding-top:50px;
     
+
 }
 
 .content{
     @include container;
-    align-content:space-around;
+    align-content:flex-start;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
     flex-direction: column;
+    
 }
 .content-title{
+    display: flex;
     width: 70%;
     align-content: center;
     justify-content: center;
     text-align: center;
-    margin-top: 0px;
+    margin: 30px 0px 0px 30px;
     padding: 20px 50px 30px 50px;
-    color: #FFA864;
-    font-size: 18px; 
-            @include lg{
-                font-size: 40px; 
-            }
-            @include md{
-                font-size: 30px; 
-            }
-    text-shadow: 3px 0px 1px rgba(0, 0, 0, 1);
+    color: $right-nav-color;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    @include lg{
+        font-size: 40px; 
+    }
+    @include md{
+        font-size: 30px; 
+    }
+    text-shadow: 3px 0px 1px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    
 
 }
 .price-container{
@@ -332,7 +343,7 @@ nav{
         background-color: white;
         align-content: space-between;
         justify-content: space-between;
-        height: 50%;
+        height: 75%;
         list-style-type: none;
         text-align: center;
         margin: 0 2.5% 0 2.5%;
@@ -370,9 +381,9 @@ nav{
             @include md{
                 font-size: 20px; 
             }
-            $gradient: darken($right-nav-color, 10%);
-            background: linear-gradient(to right top, $gradient, lighten($right-nav-color, 12%));
-            color: white;
+            $gradient: darken($right-nav-background-color, 10%);
+            background: linear-gradient(to right top, $gradient, lighten($right-nav-background-color, 12%));
+            color: $right-nav-color;
             text-shadow: 3px 0px 1px rgba(0, 0, 0, 1);
         }
         .price-item:nth-child(1){
@@ -380,9 +391,9 @@ nav{
 
         }
         .price-item:nth-child(1), .price-item:nth-child(2){
-            $gradient: darken($right-nav-color, 30%);
-            background: linear-gradient(to right, $gradient, lighten($right-nav-color, 10%));
-            color: white;
+            $gradient: darken($right-nav-background-color, 30%);
+            background: linear-gradient(to right, $gradient, lighten($right-nav-background-color, 10%));
+            color: $right-nav-color;
             text-shadow: 3px 0px 1px rgba(0, 0, 0, 1);
 
         }
@@ -402,10 +413,10 @@ nav{
     flex-direction: row;
     @include lg{
         flex-direction: row;
-        }
-        @include md{
-         flex-direction: column;
-        }
+    }
+    @include md{
+        flex-direction: column;
+    }
 
 
     li{
@@ -430,7 +441,7 @@ nav{
         a{
             @include nav-item;
             text-decoration: none;
-            color: black;
+            color: $right-nav-color;
             flex-direction: column;
             text-align: center;
         }
@@ -447,16 +458,16 @@ nav{
 
         @for $i from 1 through 3 {
             &:nth-child(#{$i})  {
-                $gradient: lighten($right-nav-color, 9%*$i);
-                background: linear-gradient(to right top, $gradient, $right-nav-color);
+                $gradient: lighten($right-nav-background-color, 9%*$i);
+                background: linear-gradient(to right top, $gradient, $right-nav-background-color);
             }
         }
 
         @for $i from 4 through 6 {
             &:nth-child(#{$i})  {
-                $gradient: lighten($right-nav-color, 15%*($i/3));
+                $gradient: lighten($right-nav-background-color, 15%*($i/3));
                 /*background-color: darken($gradient, 9%*($i/3));*/
-                background: linear-gradient(to right top, $gradient, $right-nav-color);
+                background: linear-gradient(to right top, $gradient, $right-nav-background-color);
             }
         }
     }
@@ -554,10 +565,10 @@ nav{
     flex-direction:column;
 }
 .conditions{
- width: 40%; 
+    width: 40%; 
 } 
 .skilift{
- width: 95%; 
+    width: 95%; 
 }
 .conditions, .skilift{
     overflow: hidden;
@@ -571,22 +582,22 @@ nav{
         padding: 2px;
         text-align: center;
         font-size: 10px; 
-    @include lg{
-        font-size: 22px;
-    }
-    @include md{
-        font-size: 18px;
-        padding: 5px; 
-    }
+        @include lg{
+            font-size: 22px;
+        }
+        @include md{
+            font-size: 18px;
+            padding: 5px; 
+        }
     }
     tr{
 
     }
     th{
         vertical-align: middle;
-        $gradient: darken($right-nav-color, 30%);
-        background: linear-gradient(to right, $gradient, lighten($right-nav-color, 10%));
-        color: white;
+        $gradient: darken($right-nav-background-color, 30%);
+        background: linear-gradient(to right, $gradient, lighten($right-nav-background-color, 10%));
+        color: $right-nav-color;
         text-shadow: 3px 0px 1px rgba(0, 0, 0, 1);
         height: 100%;
     }
@@ -608,21 +619,41 @@ nav{
         border-radius: 5px;
         padding: 5px;
         margin: 5px;
-        
-    }
-    li:hover{
-        transform: scale(1.1);
-        background-color: rgba(255, 168, 100, 0.9);
-        transition: transform 1s;
-        cursor: pointer;
-        
-        
+        &:after{
+            background-color: rgba(0, 0,0, 0.5);
+            content: "";
+            height: 100%; 
+            left: 0; 
+            top: 37.5%; 
+            width: 0px;  
+            position: absolute;}
+        &:hover{
+            transform: scale(1.1);
+            background-color: rgba(255, 168, 100, 0.9);
+            transition: transform 1s;
+            cursor: pointer;
+            &:after{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                content: "BACA-SKI";
+                width: 100%;
+                height: 25%;
+                text-align: center;
+                font-size: 10PX;
+
+            }
+
+        }
+
+
+
     }
 }
 .galleryImg{
-        width: 16vw;
-        height: 12vw;
-     @include lg{
+    width: 16vw;
+    height: 12vw;
+    @include lg{
         width: 12vw;
         height: 10vw;
     }
@@ -639,8 +670,8 @@ nav{
 /*
 
 .conditions th:nth-child(1){
-    display:table-cell; 
-    vertical-align:middle;
+display:table-cell; 
+vertical-align:middle;
 }
 */
 

@@ -22,9 +22,11 @@ html, body {
   margin: 0px;
   font-family: 'Quicksand', sans-serif;
   background-color: gainsboro;
-  height: 100%;
   box-sizing: border-box;
   text-decoration: none; }
+
+body {
+  min-width: 320px; }
 
 /*header style*/
 nav {
@@ -194,14 +196,12 @@ nav {
   display: flex;
   flex-direction: column;
   border: none;
-  /*height: 100%;*/
-  height: 90vh;
+  height: 100%;
   width: 100%; }
 
 .container-right {
-    /*@include container;
-    width: 8%;
-*/ }
+  /*    @include container;
+      width: 8%;*/ }
 
 .main-container {
   background: url(/img/backgrounds/snow.jpeg) no-repeat center center;
@@ -212,26 +212,30 @@ nav {
   display: flex;
   flex-direction: column;
   border: none;
-  /*height: 100%;*/
-  height: 90vh;
-  align-content: space-around;
+  height: 100%;
+  align-content: flex-start;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   flex-direction: column; }
 
 .content-title {
+  display: flex;
   width: 70%;
   align-content: center;
   justify-content: center;
   text-align: center;
-  margin-top: 0px;
+  margin: 30px 0px 0px 30px;
   padding: 20px 50px 30px 50px;
-  color: #FFA864;
+  color: #e75436;
   font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
   /* Large Devices, Wide Screens */
   /* Medium Devices, Desktops */
-  text-shadow: 3px 0px 1px black; }
+  text-shadow: 3px 0px 1px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 30px; }
   @media only screen and (min-width: 1200px) {
     .content-title {
       font-size: 40px; } }
@@ -243,8 +247,7 @@ nav {
   display: flex;
   flex-direction: column;
   border: none;
-  /*height: 100%;*/
-  height: 90vh;
+  height: 100%;
   align-content: center;
   justify-content: center;
   width: 100%;
@@ -266,7 +269,7 @@ nav {
     background-color: white;
     align-content: space-between;
     justify-content: space-between;
-    height: 50%;
+    height: 75%;
     list-style-type: none;
     text-align: center;
     margin: 0 2.5% 0 2.5%;
@@ -298,8 +301,8 @@ nav {
       font-size: 16px;
       /* Large Devices, Wide Screens */
       /* Medium Devices, Desktops */
-      background: linear-gradient(to right top, #64bce3, #c3e5f4);
-      color: white;
+      background: linear-gradient(to right top, #1a1a1a, #525252);
+      color: #e75436;
       text-shadow: 3px 0px 1px black; }
       @media only screen and (min-width: 1200px) {
         .price-container .price .price-item:nth-child(even) {
@@ -310,8 +313,8 @@ nav {
     .price-container .price .price-item:nth-child(1) {
       border-radius: 20px 20px 0px 0px; }
     .price-container .price .price-item:nth-child(1), .price-container .price .price-item:nth-child(2) {
-      background: linear-gradient(to right, #228fbf, #bae2f3);
-      color: white;
+      background: linear-gradient(to right, black, #4d4d4d);
+      color: #e75436;
       text-shadow: 3px 0px 1px black; }
     .price-container .price .price-item:last-of-type {
       border-radius: 0px 0px 20px 20px; }
@@ -365,7 +368,7 @@ nav {
       align-items: center;
       flex-wrap: wrap;
       text-decoration: none;
-      color: black;
+      color: #e75436;
       flex-direction: column;
       text-align: center; }
     .right-nav li img {
@@ -380,20 +383,20 @@ nav {
         .right-nav li img {
           width: 40px; } }
     .right-nav li:nth-child(1) {
-      background: linear-gradient(to right top, #b6e0f2, #8FCFEB); }
+      background: linear-gradient(to right top, #4a4a4a, #333333); }
     .right-nav li:nth-child(2) {
-      background: linear-gradient(to right top, #ddf0f9, #8FCFEB); }
+      background: linear-gradient(to right top, #616161, #333333); }
     .right-nav li:nth-child(3) {
-      background: linear-gradient(to right top, white, #8FCFEB); }
+      background: linear-gradient(to right top, #787878, #333333); }
     .right-nav li:nth-child(4) {
       /*background-color: darken($gradient, 9%*($i/3));*/
-      background: linear-gradient(to right top, #e6f4fa, #8FCFEB); }
+      background: linear-gradient(to right top, #666666, #333333); }
     .right-nav li:nth-child(5) {
       /*background-color: darken($gradient, 9%*($i/3));*/
-      background: linear-gradient(to right top, #fbfdfe, #8FCFEB); }
+      background: linear-gradient(to right top, #737373, #333333); }
     .right-nav li:nth-child(6) {
       /*background-color: darken($gradient, 9%*($i/3));*/
-      background: linear-gradient(to right top, white, #8FCFEB); }
+      background: linear-gradient(to right top, gray, #333333); }
   .right-nav li:hover {
     opacity: 0.7;
     width: 100%;
@@ -519,8 +522,8 @@ nav {
         padding: 5px; } }
   .conditions th, .skilift th {
     vertical-align: middle;
-    background: linear-gradient(to right, #228fbf, #bae2f3);
-    color: white;
+    background: linear-gradient(to right, black, #4d4d4d);
+    color: #e75436;
     text-shadow: 3px 0px 1px black;
     height: 100%; }
   .conditions td, .skilift td {
@@ -549,11 +552,28 @@ nav {
     border-radius: 5px;
     padding: 5px;
     margin: 5px; }
-  #images li:hover {
-    transform: scale(1.1);
-    background-color: rgba(255, 168, 100, 0.9);
-    transition: transform 1s;
-    cursor: pointer; }
+    #images li:after {
+      background-color: rgba(0, 0, 0, 0.5);
+      content: "";
+      height: 100%;
+      left: 0;
+      top: 37.5%;
+      width: 0px;
+      position: absolute; }
+    #images li:hover {
+      transform: scale(1.1);
+      background-color: rgba(255, 168, 100, 0.9);
+      transition: transform 1s;
+      cursor: pointer; }
+      #images li:hover:after {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        content: "BACA-SKI";
+        width: 100%;
+        height: 25%;
+        text-align: center;
+        font-size: 10PX; }
 
 .galleryImg {
   width: 16vw;
@@ -576,8 +596,8 @@ nav {
 /*
 
 .conditions th:nth-child(1){
-    display:table-cell; 
-    vertical-align:middle;
+display:table-cell; 
+vertical-align:middle;
 }
 */
 
