@@ -30,6 +30,7 @@
             if (navClass.contains("columnNavHide") || navClass.contains("columnNavShow")) {
                 nav.className = "";
                 navClass.add('top-nav');
+                content.classList.remove("navButtonClicked"); 
 
             }
         }

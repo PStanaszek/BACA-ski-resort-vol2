@@ -98,51 +98,26 @@ function newHTML(){
 
 newHTML();
 
+(function clickedWeater(){
 
-/*(function dropDownNav(){
-    window.onload = function(){
-        window.addEventListener("resize", function() {
-            var windowWidth = window.innerWidth;
-            var dropDownNavButton = document.querySelector(".dropDownNav");
-            var lineNav =  document.querySelector("nav > ul");
-            if ( windowWidth < 880){
-                if(lineNav.classList.contains('top-nav')){
-                    lineNav.classList.remove('top-nav');
-
-                }
-                dropDownNavButton.style.display = "block";
-                lineNav.classList.add('columnNavHide');
-                console.log(lineNav.className); 
-                dropDownNavButton.onclick = function(){ 
-                    
-                    lineNav.classList.toggle('columnNavHide');
-                    lineNav.classList.toggle('columnNavShow');
-
-                    console.log(lineNav.className); 
-                }
-            }else{
-                dropDownNavButton.style.display = "none";
-                if(lineNav.classList.contains("columnNavHide") || lineNav.classList.contains("columnNavShow")){
-                    lineNav.className = "";
-                    lineNav.classList.add('top-nav');
-                    console.log(lineNav.classList);
-                }
-
-
-
-            }
-
-        });
-
+    var weatherContainer = document.querySelector(".weather");
+    var weatherElem = document.querySelectorAll(".current-weather");
+    var weatherHeaderIcon = document.querySelector(".name >img");
+    weatherContainer.onclick = function(e){
+       e.preventDefault();
+        weatherContainer.classList.toggle("slideOutWeatherDiv");
+        weatherHeaderIcon.classList.toggle("hideWeatherDivs");
+        console.log(weatherContainer.classList);
+        for ( var i = 0; i< weatherElem.length; i++){
+          weatherElem[i].classList.toggle("hideWeatherDivs");
+          weatherElem[i].classList.toggle("showWeatherDivs");
+          console.log(weatherElem[i].classList);
+            
+         
+        }
+    
+        
+        
     }
-
-		
-		
-
-
-})();*/
-
-/*photo viewer*/
-
-/*photo viewer*/
+})();
 

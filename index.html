@@ -7,7 +7,7 @@
         <meta name="description" content="Zapraszamy na wyciągi narciarskie BACA - Zawoja Czatoża. Sztuczni naśnieżamy, oświtlony stok narciaski w Zawoi. Obok wyciągu znajduje się wypożyczalnia sprzętu narciarskiego, gastronomia, oraz zaplecze instruktorów narciarstwa oraz snowboardu.">
         <meta name="keywords" content="wyciągi narciarskie, zawoja baca, zawoja wyciągi, narty, zawoja, babia góra">
         <meta name="author" content="Piotr Stanaszek">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
         <link rel="stylesheet" href="css/style.css">
 
@@ -38,9 +38,8 @@
                 <ul class="top-nav">
                     <li><a href="lifts.html" class="nav-bar menu">Wyciągi</a></li>
                     <li><a href="prices.html" class="nav-bar menu" id="prices" onclick="animate()">Cennik</a></li>		
-                    <li><a href="location.html" class="nav-bar menu">Dojazd</a></li>	
                     <li><a href="gallery.html" class="nav-bar menu">Galeria</a></li>	
-                    <li><a href="contact.html" class="nav-bar menu">Kontakt</a></li>
+                    <li><a href="location.html" class="nav-bar menu">Dojazd</a></li>
                 </ul>
 
 
@@ -50,18 +49,9 @@
         <div class="container main-container">
             <section class=" container container-left">
                 <div class="weather">
-                    <span class="name animated bounce"><h1>Pogoda Zawoja</h1></span>
+                    <span class="name animated bounce"><img src="img/backgrounds/snowweather.png" alt="weather header" class="weather-header-img"><h1>Pogoda Zawoja</h1></span>
 
-                    <div class="current-weather">
-
-                        <span class="full-date"><span class="day">Czwartek mar</span><span class="date"> 19 MAR</span> </span>
-                        <span class="icon-and-temp"><img src="img/png/050-sun.png" alt="Prognoza pogody"/><span class="temp">19</span></span>
-                        <span class="description">bezchmurnie</span>
-
-
-                    </div>
-
-                    <div class="current-weather">
+                    <div class="current-weather hideWeatherDivs">
 
                         <span class="full-date"><span class="day">Czwartek mar</span><span class="date"> 19 MAR</span> </span>
                         <span class="icon-and-temp"><img src="img/png/050-sun.png" alt="Prognoza pogody"/><span class="temp">19</span></span>
@@ -70,7 +60,16 @@
 
                     </div>
 
-                    <div class="current-weather">
+                    <div class="current-weather hideWeatherDivs">
+
+                        <span class="full-date"><span class="day">Czwartek mar</span><span class="date"> 19 MAR</span> </span>
+                        <span class="icon-and-temp"><img src="img/png/050-sun.png" alt="Prognoza pogody"/><span class="temp">19</span></span>
+                        <span class="description">bezchmurnie</span>
+
+
+                    </div>
+
+                    <div class="current-weather hideWeatherDivs">
 
                         <span class="full-date"><span class="day">Czwartek mar</span><span class="date"> 19 MAR</span> </span>
                         <span class="icon-and-temp"><img src="img/png/050-sun.png" alt="Prognoza pogody"/><span class="temp">19</span></span>
@@ -86,7 +85,6 @@
                     <div class=""></div>
                 </div>
             </section>
-
             <section class="container container-center">
                 <div class="content">
                     <span class ="content-title">Zapraszamy do Zawoi Czatoża na wyciągi narciarskie BACA
@@ -180,7 +178,8 @@
                     <li class="link"><a href="http://www.zawoja-ski.pl/" class="rightmenu"><img src="img/icons/info.png"  target="_blank"/>Informator narciarski</a></li>
 
                 </ul>
-            </section>            
+            </section> 
+           
         </div>
 
         <script src="js/script.js"></script>
