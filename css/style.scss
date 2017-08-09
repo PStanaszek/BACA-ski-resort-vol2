@@ -55,7 +55,7 @@ $border-color:black;
 @mixin container{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-content:center;
     align-items: center;
     border: $border; 
@@ -82,7 +82,7 @@ $border-color:black;
 
 @mixin sm{
     /* Small Devices, Tablets */
-    @media only screen and (min-width : 880px) {
+    @media only screen and (min-width : 860px) {
         @content;   
     }
 }
@@ -224,18 +224,21 @@ nav{
     position: absolute;
     top: 55px;
     right: 0px;
-    background: linear-gradient(to right, black, gray);
+    background: rgba(255, 255, 255, 0.7);
     li{
         width: 100%;
         text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     }
     li a{
         @include list-style;
         width: 100%;
     }
 
-    li a:hover{
+    li:hover{
+        
         font-weight: 800;
+        background: $right-nav-color;
     }
 
 
@@ -255,7 +258,6 @@ nav{
 
 .container{
     @include container;
-    min-height:90vh;
     flex-direction: row;
     @include lg{
         flex-direction: row;
@@ -269,61 +271,75 @@ nav{
 
 .container-center{
     @include container;
-    width: 78%;
+    width: 68%;
 }
 
 .container-right{
-    width: 10%;
-    border: $border;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items:flex-start;
-    align-content:flex-start;
-
+    width:15%; 
 
 }
 
 .container-left{
-    width: 10%;
+    width:15%;
+    position: fixed;
+    top: 150px;
+    left: 0px;
 }
+
 
 
 .main-container{
     background: url(/img/backgrounds/snow.jpeg) no-repeat center center;
     background-size: cover;
     padding-top:50px;
+    min-height: 90vh;
 
 
 }
 .right-nav{
+    padding-top: 20px;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
     border: $border;
     @include list-style;
-    @include side-bar;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    align-content: flex-start;
-     @include lg{
-                 @include side-bar;
-                 flex-direction: column;
-                 justify-content:flex-start;
-                 align-content:flex-start;
-            }
-            @include md{
-                @include side-bar;
-                 flex-direction: column;
-                 justify-content:flex-start;
-                 align-content:flex-start;
-            }
-           
+    align-items: flex-end;
+
+
+
     li{
         background-color: rgba(0,0,0, 0.7);
         @include side-bar;
         margin-top: 5px;
         padding: 3px;
-        height: 100px;
+        border-radius: 50%;
         align-content: center;
         align-items: center;
         justify-content: center;
+        border: 4px solid rgba(0, 0, 0, 0.3);
+        height: 50px;
+        width: 50px;
+        @include lg{
+            height: 120px;
+            width: 120px;  
+        }
+        @include md{
+            height: 120px;
+            width: 120px;
+
+        }
+        @include sm{
+            height: 100px;
+            width: 100px;
+
+        }
+
+        &:hover{
+            border: 4px solid rgba(231, 84, 54, 1); 
+        }
         a{
             @include list-style; 
             @include side-bar;
@@ -333,20 +349,32 @@ nav{
             color: white;
             font-size: 8px;
             @include lg{
-                font-size: 22px;
-                height: 100px;
+                font-size: 26px;
+
             }
             @include md{
                 font-size: 14px;
-                height: 70px;
+
             }
             @include sm{
                 font-size: 14px;
-                height: 70px;
+
             }
         }
         img{
-            max-width: 40px;
+            max-width: 25px;
+            @include lg{
+                max-width: 40px;
+
+            }
+            @include md{
+                max-width: 30px;
+
+            }
+            @include sm{
+                max-width: 27px;
+
+            }
         }
     }
 
@@ -361,26 +389,26 @@ nav{
     align-content: flex-start;
     width: 100%;
 
-.content-title{
-    margin: 20px 0px 20px 0px;
-    text-align: center;
-    padding: 20px 30px 20px 30px;
-    color: $right-nav-color;
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    @include lg{
-        font-size: 35px; 
-    }
-    @include md{
-        font-size: 30px; 
-    }
-    text-shadow: 3px 0px 1px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 30px;
+    .content-title{
+        margin: 20px 0px 20px 0px;
+        text-align: center;
+        padding: 20px 30px 20px 30px;
+        color: $right-nav-color;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        @include lg{
+            font-size: 35px; 
+        }
+        @include md{
+            font-size: 30px; 
+        }
+        text-shadow: 3px 0px 1px rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 30px;
 
 
-}
+    }
 }
 
 .price-container{
@@ -427,7 +455,7 @@ nav{
 
         }
         .price-item:nth-child(odd){
-            font-size: 14px; 
+            font-size: 10px; 
             @include lg{
                 font-size: 22px; 
             }
@@ -482,7 +510,7 @@ nav{
     max-width:90px;
     @include side-bar;
     background-size:cover;
-    font-size: 12px; 
+    font-size: 10px; 
     color: white;
     padding: 10px;
     height: 40px;
@@ -583,7 +611,7 @@ nav{
 }
 
 .temp{
-    font-size: 14px; 
+    font-size: 10px; 
     @include lg{
         font-size: 26px; 
     }
@@ -595,6 +623,7 @@ nav{
 
 /*index table*/
 .lift-container{
+    overflow: hidden;
     display: flex;
     align-content:space-around;
     justify-content: center;
@@ -605,20 +634,29 @@ nav{
     width: 40%; 
 } 
 .skilift{
-    width: 95%; 
+    width: 95%;
+    overflow: hidden;
 }
 .conditions, .skilift{
     overflow: hidden;
     margin: 20px auto;
     box-sizing:border-box;
     img{
-        height: 30px;
+        height: 20px;
         width: auto;
+        @include lg{
+            height: 30px;
+            width: auto;
+        }
+        @include md{
+            height: 30px;
+            width: auto; 
+        }
     }
     tr,td,th{
         padding: 2px;
         text-align: center;
-        font-size: 10px; 
+        font-size: 8px; 
         @include lg{
             font-size: 22px;
         }
@@ -663,7 +701,8 @@ nav{
             left: 0; 
             top: 37.5%; 
             width: 0px;  
-            position: absolute;}
+            position: absolute;
+            color: floralwhite;}
         &:hover{
             transform: scale(1.1);
             background-color: rgba(255, 168, 100, 0.9);
