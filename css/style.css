@@ -61,9 +61,17 @@ nav {
   border: 1ps solid black; }
   .logo img {
     align-content: flex-start;
-    width: 250px;
+    width: 150px;
     height: 100%;
-    padding: 0 10px 0 10px; }
+    padding: 0 10px 0 10px;
+    /* Large Devices, Wide Screens */
+    /* Medium Devices, Desktops */ }
+    @media only screen and (min-width: 1200px) {
+      .logo img {
+        max-width: 260px; } }
+    @media only screen and (min-width: 992px) {
+      .logo img {
+        width: 230px; } }
 
 .top-nav {
   display: flex;
@@ -171,7 +179,7 @@ nav {
   flex-direction: column;
   justify-content: flex-end;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   border: 1ps solid black;
   height: 100%;
   flex-direction: row;
@@ -189,19 +197,20 @@ nav {
   flex-direction: column;
   justify-content: flex-end;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   border: 1ps solid black;
   height: 100%;
-  width: 68%; }
+  width: 60%; }
 
 .container-right {
-  width: 15%; }
+  width: 20%;
+  padding-right: 10px; }
 
 .container-left {
   width: 15%;
   position: fixed;
-  top: 150px;
-  left: 0px; }
+  top: 0px;
+  left: 5px; }
 
 .main-container {
   background: url(/img/backgrounds/snow.jpeg) no-repeat center center;
@@ -244,20 +253,20 @@ nav {
     align-items: center;
     justify-content: center;
     border: 4px solid rgba(0, 0, 0, 0.3);
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     /* Large Devices, Wide Screens */
     /* Medium Devices, Desktops */
-    /* Small Devices, Tablets */ }
+    /* Extra Small Devices, Phones */ }
     @media only screen and (min-width: 1200px) {
       .right-nav li {
-        height: 120px;
-        width: 120px; } }
+        height: 140px;
+        width: 140px; } }
     @media only screen and (min-width: 992px) {
       .right-nav li {
         height: 120px;
         width: 120px; } }
-    @media only screen and (min-width: 860px) {
+    @media only screen and (min-width: 480px) {
       .right-nav li {
         height: 100px;
         width: 100px; } }
@@ -280,11 +289,12 @@ nav {
       align-content: flex-start;
       border: 1ps solid black;
       margin-top: 50px;
+      text-align: center;
       flex-wrap: nowrap;
       margin-top: 0px;
       text-align: center;
       color: white;
-      font-size: 8px;
+      font-size: 7px;
       /* Large Devices, Wide Screens */
       /* Medium Devices, Desktops */
       /* Small Devices, Tablets */ }
@@ -298,7 +308,7 @@ nav {
         .right-nav li a {
           font-size: 14px; } }
     .right-nav li img {
-      max-width: 25px;
+      max-width: 12px;
       /* Large Devices, Wide Screens */
       /* Medium Devices, Desktops */
       /* Small Devices, Tablets */ }
@@ -310,14 +320,14 @@ nav {
           max-width: 30px; } }
       @media only screen and (min-width: 860px) {
         .right-nav li img {
-          max-width: 27px; } }
+          max-width: 25px; } }
 
 .content {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   border: 1ps solid black;
   height: 100%;
   justify-content: center;
@@ -397,7 +407,8 @@ nav {
       height: 100%;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      letter-spacing: 2px; }
     .price-container .price .price-item:nth-child(odd) {
       font-size: 10px;
       /* Large Devices, Wide Screens */
@@ -412,23 +423,25 @@ nav {
           font-size: 16px; } }
     .price-container .price .price-item:nth-child(even) {
       font-size: 16px;
+      font-weight: 800;
       /* Large Devices, Wide Screens */
       /* Medium Devices, Desktops */
       background: linear-gradient(to right top, #1a1a1a, #525252);
-      color: #e75436;
-      text-shadow: 3px 0px 1px black; }
+      color: #e75436; }
       @media only screen and (min-width: 1200px) {
         .price-container .price .price-item:nth-child(even) {
-          font-size: 24px; } }
+          font-size: 26px; } }
       @media only screen and (min-width: 992px) {
         .price-container .price .price-item:nth-child(even) {
-          font-size: 20px; } }
+          font-size: 26px; } }
     .price-container .price .price-item:nth-child(1) {
-      border-radius: 20px 20px 0px 0px; }
+      border-radius: 20px 20px 0px 0px;
+      color: whitesmoke;
+      font-weight: 800; }
+    .price-container .price .price-item:nth-child(2) {
+      color: #e75436; }
     .price-container .price .price-item:nth-child(1), .price-container .price .price-item:nth-child(2) {
-      background: linear-gradient(to right, black, #4d4d4d);
-      color: #e75436;
-      text-shadow: 3px 0px 1px black; }
+      background: linear-gradient(to right, black, #4d4d4d); }
     .price-container .price .price-item:last-of-type {
       border-radius: 0px 0px 20px 20px; }
 
@@ -455,8 +468,9 @@ nav {
   font-size: 10px;
   color: white;
   padding: 10px;
-  height: 40px;
-  max-width: 50px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
   /* Large Devices, Wide Screens */
   /* Medium Devices, Desktops */
   text-align: center;
@@ -470,12 +484,12 @@ nav {
     .weather {
       font-size: 22px;
       height: 90px;
-      max-width: 90px; } }
+      width: 90px; } }
   @media only screen and (min-width: 992px) {
     .weather {
       font-size: 16px;
       height: 90px;
-      max-width: 90px; } }
+      width: 90px; } }
   .weather div {
     padding: 5px;
     position: relative;
@@ -535,8 +549,10 @@ nav {
 
 .slideOutWeatherDiv {
   opacity: 1;
-  height: 370px;
-  background: url(/img/backgrounds/weather2.jpg) no-repeat center center; }
+  height: 80%;
+  border-radius: 3px;
+  background: url(/img/backgrounds/weather2.jpg) no-repeat center center;
+  box-shadow: none; }
 
 .full-date {
   font-weight: 700; }
@@ -695,9 +711,11 @@ nav {
   flex-direction: column;
   justify-content: flex-end;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   border: 1ps solid black;
   height: 100%;
+  align-items: center;
+  text-align: center;
   width: 50%; }
 
 .map {
@@ -707,6 +725,112 @@ nav {
   align-items: center;
   justify-content: space-around;
   flex-direction: column; }
+
+.skischool-container, .skirent-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap; }
+  .skischool-container .skischool-item, .skirent-container .skischool-item {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    height: 220px;
+    border: 4px solid rgba(138, 204, 20, 0.7);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    color: black; }
+    .skischool-container .skischool-item span, .skirent-container .skischool-item span {
+      padding: 10px; }
+    .skischool-container .skischool-item span:first-child, .skirent-container .skischool-item span:first-child {
+      font-size: 25px;
+      color: #4b6f0b; }
+    .skischool-container .skischool-item span:last-child, .skirent-container .skischool-item span:last-child {
+      font-size: 32px;
+      color: black; }
+    .skischool-container .skischool-item:nth-child(4) span:last-child, .skirent-container .skischool-item:nth-child(4) span:last-child {
+      font-size: 20px; }
+    .skischool-container .skischool-item:hover, .skirent-container .skischool-item:hover {
+      border: 4px solid #8acc14; }
+
+.skirent-item {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 220px;
+  border: 4px solid rgba(0, 79, 255, 0.7);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  color: black; }
+  .skirent-item span {
+    padding: 5px;
+    font-size: 20px; }
+  .skirent-item span:first-child {
+    font-size: 22px;
+    color: #002f99; }
+  .skirent-item:hover {
+    border: 4px solid #004fff; }
+
+.camera-container {
+  width: 80%;
+  display: flex;
+  align-content: center;
+  justify-content: center; }
+  .camera-container img {
+    height: 50%;
+    width: 50%;
+    padding: 30px; }
+
+.firstpage-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
+.firstpage-image {
+  padding: 10px;
+  height: 300px;
+  min-height: 300px;
+  width: 50%;
+  background: url(/img/galleryImg/wyciagbaca15.jpg) no-repeat center center;
+  background-size: cover; }
+  .firstpage-image img {
+    width: 100%; }
+
+.firstpage-content {
+  height: 300px;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.8); }
+  .firstpage-content .firstpage-items {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 23px; }
+    .firstpage-content .firstpage-items img {
+      margin-right: 10%;
+      width: 8%; }
 
 /*contact section styles*/
 

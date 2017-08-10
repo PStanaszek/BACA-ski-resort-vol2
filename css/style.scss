@@ -6,8 +6,8 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend, caption, tfoot, thead,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
     margin: 0;
@@ -18,189 +18,196 @@ time, mark, audio, video {
     vertical-align: middle;
 }
 
-
 $border: 1ps solid black;
 $gradient: 0;
 $right-nav-background-color: #333333;
 $right-nav-color: #e75436;
-$border-color:black;
+$skirent-color: #004FFF;
+$skischool-color: #8ACC14;
+$border-color: black;
 
-@mixin list-style{
+@mixin list-style {
     text-decoration: none;
     list-style-type: none;
     color: black;
 }
 
-@mixin parent-flex($direction, $wrap){
+@mixin parent-flex($direction, $wrap) {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    flex-direction: $direction; 
+    flex-direction: $direction;
     flex-wrap: $wrap;
     text-decoration: none;
     width: 100%;
     padding: 0%;
     margin-top: 0%;
-
-
 }
 
-@mixin nav-item{
+@mixin nav-item {
     display: flex;
-    align-items:center;
+    align-items: center;
     flex-wrap: wrap;
-
 }
 
-@mixin container{
+@mixin container {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-content:center;
-    align-items: center;
-    border: $border; 
+    align-content: center;
+    align-items: flex-start;
+    border: $border;
     height: 100%;
-
 }
 
+@mixin side-bar {
+    @include parent-flex(column, nowrap);
 
-@mixin side-bar{
-    @include parent-flex(column, nowrap);    
-    justify-content:flex-start;
-    align-content:flex-start;
-    border:$border;
+    justify-content: flex-start;
+    align-content: flex-start;
+    border: $border;
     margin-top: 50px;
 }
 
-
-@mixin xs{
-    /* Extra Small Devices, Phones */ 
-    @media only screen and (min-width : 480px) {
+@mixin xs {
+    /* Extra Small Devices, Phones */
+    @media only screen and (min-width: 480px) {
         @content;
-    } 
+    }
 }
 
-@mixin sm{
+@mixin sm {
     /* Small Devices, Tablets */
-    @media only screen and (min-width : 860px) {
-        @content;   
+    @media only screen and (min-width: 860px) {
+        @content;
     }
 }
 
-@mixin md{
+@mixin md {
     /* Medium Devices, Desktops */
-    @media only screen and (min-width : 992px) {
+    @media only screen and (min-width: 992px) {
         @content;
     }
 }
 
-@mixin lg{
+@mixin lg {
     /* Large Devices, Wide Screens */
-    @media only screen and (min-width : 1200px) {
+    @media only screen and (min-width: 1200px) {
         @content;
     }
-
 }
 
-
-
-
-
-
-
-
-html,body{
+html, body {
     margin: 0px;
     font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
     text-decoration: none;
 }
-body{
+
+body {
     min-width: 320px;
 }
 
-
-
 /*header style*/
-nav{
+nav {
     @include parent-flex(row, nowrap);
+
     /*background: linear-gradient(to right ,black, gray);*/
     background: rgba(255, 255, 255, 0.7);
     padding-bottom: 0px;
     position: fixed;
     z-index: 1000;
     justify-content: space-between;
-    /*margin-bottom: 10%;*/
 
+    /*margin-bottom: 10%;*/
 }
-.logo{
+
+.logo {
     @include parent-flex(row, nowrap);
+
     justify-content: flex-start;
     width: 40%;
     margin: 5px 40px 0px 0px;
     border: $border;
-    img{
+
+    img {
         align-content: flex-start;
-        width: 250px;
+        width: 150px;
         height: 100%;
         padding: 0 10px 0 10px;
+        @include lg {
+            max-width: 260px;
+        }
+
+
+        @include md {
+            width: 230px;
+        }
+
     }
-
-
 }
 
-.top-nav{
+.top-nav {
     @include parent-flex(row, wrap);
+
     list-style-type: none;
     border: $border;
     width: 100%;
     padding: 0px 0px 0px 0px;
     margin: 0px 20px 0px 2px;
     letter-spacing: 2px;
-    li{
+
+    li {
         @include nav-item;
+
         justify-content: space-around;
         height: 50px;
         width: 70px;
         align-content: center;
         color: whitesmoke;
-        border-bottom: 3px solid transparent; 
+        border-bottom: 3px solid transparent;
         border-right: 0.5px solid;
         border-right-color: lighten($border-color, 60%);
         padding: 0 3% 0 3%;
-        a{
+
+        a {
             border: $border;
-            font-size: 12px; 
-            @include lg{
-                font-size: 18px; 
+            font-size: 12px;
+
+            @include lg {
+                font-size: 18px;
             }
-            @include md{
-                font-size: 16px; 
+
+
+            @include md {
+                font-size: 16px;
             }
+
+
             color: black;
             text-decoration: none;
             padding: 0px 5px 0px 5px;
-
         }
-
     }
-    li:hover{
+
+    li:hover {
         background-color: lighten($border-color, 27%);
-        a{
-            color: $right-nav-color;  
-        }
 
+        a {
+            color: $right-nav-color;
+        }
     }
-    li:last-child{
+
+    li:last-child {
         border-right: none;
         border-left-color: lighten($border-color, 27%);
-
     }
-
 }
+
 /*responsive menu classes*/
-.dropDownNav{
+.dropDownNav {
     @include list-style;
+
     display: none;
     width: 40px;
     height: 40px;
@@ -211,108 +218,109 @@ nav{
     box-sizing: content-box;
     cursor: pointer;
     margin: 2px;
-
 }
 
-.columnNavShow{
+.columnNavShow {
     @include list-style;
+
     width: 100%;
     align-content: center;
-    align-items:stretch;
+    align-items: stretch;
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 55px;
     right: 0px;
     background: rgba(255, 255, 255, 0.7);
-    li{
+
+    li {
         width: 100%;
         text-align: center;
         border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     }
-    li a{
+
+    li a {
         @include list-style;
+
         width: 100%;
     }
 
-    li:hover{
-        
+    li:hover {
         font-weight: 800;
         background: $right-nav-color;
     }
-
-
-}
-.columnNavHide{
-    display: none; 
 }
 
-.navButtonClicked{
+.columnNavHide {
+    display: none;
+}
+
+.navButtonClicked {
     padding-top: 120px;
 }
 
 /*end: responsive menu classes*/
 /*end: header style*/
 
-
-
-.container{
+.container {
     @include container;
+
     flex-direction: row;
-    @include lg{
+
+    @include lg {
         flex-direction: row;
     }
-    @include md{
-        font-size: 30px;
 
+
+    @include md {
+        font-size: 30px;
     }
 }
 
-
-.container-center{
+.container-center {
     @include container;
-    width: 68%;
+
+    width: 60%;
 }
 
-.container-right{
-    width:15%; 
-
+.container-right {
+    width: 20%;
+    padding-right: 10px;
 }
 
-.container-left{
-    width:15%;
+.container-left {
+    width: 15%;
     position: fixed;
-    top: 150px;
-    left: 0px;
+    top: 0px;
+    left: 5px;
 }
 
-
-
-.main-container{
+.main-container {
     background: url(/img/backgrounds/snow.jpeg) no-repeat center center;
     background-size: cover;
-    padding-top:50px;
+    padding-top: 50px;
     min-height: 90vh;
-
-
 }
-.right-nav{
+
+.right-nav {
     padding-top: 20px;
     overflow: hidden;
     height: 100%;
     width: 100%;
     border: $border;
+
     @include list-style;
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
 
+    li {
+        background-color: rgba(0, 0, 0, 0.7);
 
-
-    li{
-        background-color: rgba(0,0,0, 0.7);
         @include side-bar;
+
         margin-top: 5px;
         padding: 3px;
         border-radius: 50%;
@@ -320,76 +328,86 @@ nav{
         align-items: center;
         justify-content: center;
         border: 4px solid rgba(0, 0, 0, 0.3);
-        height: 50px;
-        width: 50px;
-        @include lg{
-            height: 120px;
-            width: 120px;  
+        height: 30px;
+        width: 30px;
+
+        @include lg {
+            height: 140px;
+            width: 140px;
         }
-        @include md{
+
+
+        @include md {
             height: 120px;
             width: 120px;
-
         }
-        @include sm{
+
+
+        @include xs {
             height: 100px;
             width: 100px;
-
         }
 
-        &:hover{
-            border: 4px solid rgba(231, 84, 54, 1); 
+
+        &:hover {
+            border: 4px solid rgba(231, 84, 54, 1);
         }
-        a{
-            @include list-style; 
+
+        a {
+            @include list-style;
             @include side-bar;
+            text-align: center;
+
             flex-wrap: nowrap;
             margin-top: 0px;
             text-align: center;
             color: white;
-            font-size: 8px;
-            @include lg{
+            font-size: 7px;
+
+            @include lg {
                 font-size: 26px;
-
             }
-            @include md{
-                font-size: 14px;
 
+
+            @include md {
+                font-size: 14px;
             }
-            @include sm{
-                font-size: 14px;
 
+
+            @include sm {
+                font-size: 14px;
             }
         }
-        img{
-            max-width: 25px;
-            @include lg{
+
+        img {
+            max-width: 12px;
+
+            @include lg {
                 max-width: 40px;
-
             }
-            @include md{
+
+
+            @include md {
                 max-width: 30px;
-
             }
-            @include sm{
-                max-width: 27px;
 
+
+            @include sm {
+                max-width: 25px;
             }
         }
     }
-
 }
 
-
-
-.content{
+.content {
     @include container;
-    justify-content:center;
+
+    justify-content: center;
     align-items: center;
     align-content: flex-start;
     width: 100%;
 
-    .content-title{
+    .content-title {
         margin: 20px 0px 20px 0px;
         text-align: center;
         padding: 20px 30px 20px 30px;
@@ -397,153 +415,196 @@ nav{
         font-size: 10px;
         font-weight: 800;
         letter-spacing: 2px;
-        @include lg{
-            font-size: 35px; 
+
+        @include lg {
+            font-size: 35px;
         }
-        @include md{
-            font-size: 30px; 
+
+
+        @include md {
+            font-size: 30px;
         }
+
+
         text-shadow: 3px 0px 1px rgba(0, 0, 0, 0.5);
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 30px;
-
-
     }
 }
 
-.price-container{
+.price-container {
     display: flex;
-    align-content:flex-start;
-    align-items:flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
     justify-content: space-around;
     width: 100%;
     padding-bottom: 2%;
     flex-direction: row;
 
-    .price{
-        @include side-bar; 
+    .price {
+        @include side-bar;
+
         background-color: white;
         align-content: space-around;
         justify-content: space-between;
-
         height: 280px;
-        @include lg{
+
+        @include lg {
             height: 350px;
         }
-        @include md{
-            height:350px; 
+
+
+        @include md {
+            height: 350px;
         }
+
+
         list-style-type: none;
         text-align: center;
-        width:45%;
-        @include lg{
-            width:30%;
+        width: 45%;
+
+        @include lg {
+            width: 30%;
         }
-        @include md{
-            width:35%;
+
+
+        @include md {
+            width: 35%;
         }
+
+
         border-radius: 20px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 1);
+
         /*transition-duration: 10s;*/
 
-        .price-item{
+        .price-item {
             width: 100%;
             height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
+            letter-spacing: 2px;
 
         }
-        .price-item:nth-child(odd){
-            font-size: 10px; 
-            @include lg{
-                font-size: 22px; 
+
+        .price-item:nth-child(odd) {
+            font-size: 10px;
+
+
+            @include lg {
+                font-size: 22px;
             }
-            @include md{
-                font-size: 16px; 
+
+
+            @include md {
+                font-size: 16px;
             }
+
+
             background-color: grey;
-            background: linear-gradient(to bottom ,white, lightgray);
+            background: linear-gradient(to bottom, white, lightgray);
         }
-        .price-item:nth-child(even){
-            font-size: 16px; 
-            @include lg{
-                font-size: 24px; 
+
+        .price-item:nth-child(even) {
+            font-size: 16px;
+            font-weight: 800;
+
+            @include lg {
+                font-size: 26px;
             }
-            @include md{
-                font-size: 20px; 
+
+
+            @include md {
+                font-size: 26px;
             }
+
+
             $gradient: darken($right-nav-background-color, 10%);
+
             background: linear-gradient(to right top, $gradient, lighten($right-nav-background-color, 12%));
             color: $right-nav-color;
-            text-shadow: 3px 0px 1px rgba(0, 0, 0, 1);
+
         }
-        .price-item:nth-child(1){
+
+        .price-item:nth-child(1) {
             border-radius: 20px 20px 0px 0px;
-
+            color: whitesmoke;
+            font-weight: 800;
         }
-        .price-item:nth-child(1), .price-item:nth-child(2){
-            $gradient: darken($right-nav-background-color, 30%);
-            background: linear-gradient(to right, $gradient, lighten($right-nav-background-color, 10%));
+        .price-item:nth-child(2) {
             color: $right-nav-color;
-            text-shadow: 3px 0px 1px rgba(0, 0, 0, 1);
+        }
+
+
+        .price-item:nth-child(1), .price-item:nth-child(2) {
+            $gradient: darken($right-nav-background-color, 30%);
+
+            background: linear-gradient(to right, $gradient, lighten($right-nav-background-color, 10%));
+
 
         }
 
-        .price-item:last-of-type{
+        .price-item:last-of-type {
             border-radius: 0px 0px 20px 20px;
-
         }
-
     }
 }
 
-
-
-
-
-.weather{
+.weather {
     position: absolute;
     top: 20px;
     left: 0;
     background: url(/img/backgrounds/weather2.jpg) no-repeat center center;
-    max-width:90px;
+    max-width: 90px;
+
     @include side-bar;
-    background-size:cover;
-    font-size: 10px; 
+
+    background-size: cover;
+    font-size: 10px;
     color: white;
     padding: 10px;
-    height: 40px;
-    max-width:50px;
-    @include lg{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+
+    @include lg {
         font-size: 22px;
         height: 90px;
-        max-width:90px;
+        width: 90px;
     }
-    @include md{
+
+
+    @include md {
         font-size: 16px;
         height: 90px;
-        max-width:90px;
+        width: 90px;
     }
+
+
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    justify-content:center;
-    align-content:center;
+    justify-content: center;
+    align-content: center;
     padding: 7px;
     transition-duration: 0.5s;
     cursor: pointer;
 
-    div{
+    div {
         padding: 5px;
         position: relative;
+
         @include nav-item;
+
         flex-wrap: nowrap;
         flex-direction: column;
         justify-content: center;
         align-content: flex-start;
         width: 100%;
-        .current-weather{
+
+        .current-weather {
             @include nav-item;
+
             flex-wrap: nowrap;
             flex-direction: column;
             justify-content: center;
@@ -552,30 +613,32 @@ nav{
             margin-top: 2px;
             border: 1px solid black;
             transition: 2s;
-
-
-
         }
     }
-    img{
+
+    img {
         height: 25px;
         padding-right: 5px;
-        @include lg{
+
+        @include lg {
             height: 40px;
         }
-        @include md{
-            height: 35px; 
+
+
+        @include md {
+            height: 35px;
         }
     }
-
 }
-.name{
+
+.name {
     color: white;
     font-weight: 800;
     height: 70px;
     text-align: center;
     z-index: 110;
-    img{
+
+    img {
         padding-top: 15px;
         transform: scale(2);
         position: absolute;
@@ -584,131 +647,157 @@ nav{
         z-index: -100;
     }
 }
+
 /*show weather divs after click*/
-.hideWeatherDivs{
+.hideWeatherDivs {
     opacity: 0;
 }
-.showWeatherDivs{
+
+.showWeatherDivs {
     opacity: 1;
     transition: opacity 1s;
 }
-.slideOutWeatherDiv{
+
+.slideOutWeatherDiv {
     opacity: 1;
-    height: 370px;
+    height: 80%;
+    border-radius: 3px;
     background: url(/img/backgrounds/weather2.jpg) no-repeat center center;
+    box-shadow: none;
 }
 
-
-.full-date{
+.full-date {
     font-weight: 700;
 }
 
-.icon-and-temp{
+.icon-and-temp {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
 
-.temp{
-    font-size: 10px; 
-    @include lg{
-        font-size: 26px; 
+.temp {
+    font-size: 10px;
+
+    @include lg {
+        font-size: 26px;
     }
-    @include md{
-        font-size: 20px; 
+
+
+    @include md {
+        font-size: 20px;
     }
 }
-
 
 /*index table*/
-.lift-container{
+.lift-container {
     overflow: hidden;
     display: flex;
-    align-content:space-around;
+    align-content: space-around;
     justify-content: center;
     width: 100%;
-    flex-direction:column;
+    flex-direction: column;
 }
-.conditions{
-    width: 40%; 
-} 
-.skilift{
+
+.conditions {
+    width: 40%;
+}
+
+.skilift {
     width: 95%;
     overflow: hidden;
 }
-.conditions, .skilift{
+
+.conditions, .skilift {
     overflow: hidden;
     margin: 20px auto;
-    box-sizing:border-box;
-    img{
+    box-sizing: border-box;
+
+    img {
         height: 20px;
         width: auto;
-        @include lg{
+
+        @include lg {
             height: 30px;
             width: auto;
         }
-        @include md{
+
+
+        @include md {
             height: 30px;
-            width: auto; 
+            width: auto;
         }
     }
-    tr,td,th{
+
+    tr, td, th {
         padding: 2px;
         text-align: center;
-        font-size: 8px; 
-        @include lg{
+        font-size: 8px;
+
+        @include lg {
             font-size: 22px;
         }
-        @include md{
+
+
+        @include md {
             font-size: 18px;
-            padding: 5px; 
+            padding: 5px;
         }
     }
-    tr{
 
-    }
-    th{
+    tr {}
+
+    th {
         vertical-align: middle;
+
         $gradient: darken($right-nav-background-color, 30%);
+
         background: linear-gradient(to right, $gradient, lighten($right-nav-background-color, 10%));
         color: $right-nav-color;
         text-shadow: 3px 0px 1px rgba(0, 0, 0, 1);
         height: 100%;
     }
-    td{
-        background: linear-gradient(to bottom ,white, lightgray);
+
+    td {
+        background: linear-gradient(to bottom, white, lightgray);
     }
 }
 
 /*gallery styles*/
-#images{
+#images {
     @include list-style;
     @include parent-flex(row, wrap);
-    justify-content:center;
+
+    justify-content: center;
     width: 100%;
     align-content: space-around;
     justify-content: space-around;
-    li{
-        background-color: rgba(0, 0,0, 0.5);
+
+    li {
+        background-color: rgba(0, 0, 0, 0.5);
         border-radius: 5px;
         padding: 5px;
         margin: 5px;
-        &:after{
-            background-color: rgba(0, 0,0, 0.5);
+
+        &:after {
+            background-color: rgba(0, 0, 0, 0.5);
             content: "";
-            height: 100%; 
-            left: 0; 
-            top: 37.5%; 
-            width: 0px;  
+            height: 100%;
+            left: 0;
+            top: 37.5%;
+            width: 0px;
             position: absolute;
-            color: floralwhite;}
-        &:hover{
+            color: floralwhite;
+        }
+
+        &:hover {
             transform: scale(1.1);
             background-color: rgba(255, 168, 100, 0.9);
             transition: transform 1s;
             cursor: pointer;
-            &:after{
+
+            &:after {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -717,62 +806,195 @@ nav{
                 height: 25%;
                 text-align: center;
                 font-size: 10px;
-
             }
-
         }
-
-
-
     }
 }
+
 /*gallery section styles*/
-.galleryImg{
+.galleryImg {
     width: 16vw;
     height: 12vw;
-    @include lg{
-        width: 12vw;
-        height: 10vw;
-    }
-    @include md{
-        width: 12vw;
-        height: 10vw;
-    }
-}
-.gallery{
-    display:block;
-    width: 90%;
 
+    @include lg {
+        width: 12vw;
+        height: 10vw;
+    }
+
+
+    @include md {
+        width: 12vw;
+        height: 10vw;
+    }
 }
+
+.gallery {
+    display: block;
+    width: 90%;
+}
+
 /*gallery section styles*/
 
 /*contact section styles*/
-.contact-container{
+.contact-container {
     display: flex;
-    align-content:space-around;
-    align-items:center;
+    align-content: space-around;
+    align-items: center;
     justify-content: space-around;
     width: 90%;
     flex-direction: row;
-    background-color: rgba(255, 255,255,0.7);
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
-.contact{
+.contact {
     @include container;
+    align-items: center;
+    text-align: center;
     width: 50%;
 }
-.map{
+
+.map {
     width: 50%;
     display: flex;
-    align-content:space-around;
-    align-items:center;
+    align-content: space-around;
+    align-items: center;
     justify-content: space-around;
-    flex-direction:column;
+    flex-direction: column;
+}
+
+.skischool-container, .skirent-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    
+
+    .skischool-item{
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        width: 220px;
+        height: 220px;
+        border: 4px solid rgba($skischool-color, 0.7);
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.8);
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 20px;
+        color: black;
+        span{
+            padding: 10px;
+        }
+        span:first-child{
+            font-size: 25px;
+            color: darken($skischool-color, 20%);
+        }
+        span:last-child{
+            font-size: 32px;
+            color: black;
+            
+        }
+        &:nth-child(4){
+            span:last-child{
+                font-size: 20px;
+    }
+        }
+    &:hover {
+            border: 4px solid rgba($skischool-color, 1);
+        }
+    }
+    
 
 }
+
+.skirent-item{
+
+        display: flex;
+        flex-direction: column;
+        width: 220px;
+        height: 220px;
+        border: 4px solid rgba($skirent-color, 0.7);
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.8);
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 16px;
+        color: black;
+        span{
+            padding: 5px;
+            font-size: 20px;
+        }
+        span:first-child{
+            font-size: 22px;
+            color: darken($skirent-color, 20%);
+        }
+    
+    &:hover {
+            border: 4px solid rgba($skirent-color, 1);
+        }
+}
+
+.camera-container{
+    width: 80%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    
+   
+    img{
+        height: 50%;
+        width: 50%;
+        padding: 30px;
+        
+        
+}
+}
+.firstpage-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.firstpage-image{
+    padding: 10px;
+    height: 300px;
+    min-height: 300px;
+    width: 50%;
+    background: url(/img/galleryImg/wyciagbaca15.jpg) no-repeat center center;
+    background-size: cover;
+    img{
+        width: 100%;
+    }
+}
+.firstpage-content{
+    height: 300px;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    .firstpage-items{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 23px;
+        img{
+            margin-right: 10%;
+            width: 8%;
+        }
+    }
+}
 /*contact section styles*/
-
-
-
-
-
