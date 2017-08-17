@@ -131,6 +131,7 @@ nav {
     width: 40%;
     margin: 5px 40px 0px 0px;
     border: $border;
+    
 
     img {
         align-content: flex-start;
@@ -147,6 +148,10 @@ nav {
         }
 
     }
+    &:hover{
+        cursor: pointer;
+    }
+     
 }
 
 .top-nav {
@@ -297,7 +302,7 @@ nav {
 }
 
 .main-container {
-    background: url(/img/backgrounds/snow.jpeg) no-repeat center center;
+    background: url(/img/backgrounds/snow-1314590_1280.jpg) no-repeat center center;
     background-size: cover;
     padding-top: 50px;
     min-height: 90vh;
@@ -343,11 +348,6 @@ nav {
             width: 110px;
         }
 
-
-        @include xs {
-            height: 90px;
-            width: 90px;
-        }
 
 
         &:hover {
