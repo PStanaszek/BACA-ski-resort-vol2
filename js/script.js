@@ -63,7 +63,7 @@
 
 function newHTML(){
 
-    var navItem = document.getElementsByClassName('nav-bar');
+    var navItem = document.getElementsByClassName('menu');
     for(var i = 0; i < navItem.length; i++) {
         var elem = navItem[i];   
         elem.onclick = function(event) {
@@ -78,7 +78,7 @@ function newHTML(){
                    
 
                     document.querySelector(".content").innerHTML = xhr.responseText;
-                    document.querySelector(".content > div").classList.add("animated","pulse");
+                    document.querySelector(".content > div").classList.add("animated","fadeIn");
                     console.log(document.querySelector(".content > div").classList)
                     if( url = "gallery.html"){
                     var viewer = new Viewer(document.getElementById('images'));
