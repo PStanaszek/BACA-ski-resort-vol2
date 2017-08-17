@@ -1,8 +1,8 @@
 # BACA-ski-resort-vol2
-www.zawoja-baca.pl
-Wyciągi Narciarskie Baca/Baca Ski Resort New Page
+<p><strong>www.zawoja-baca.pl</strong></p>
+<p>Wyciągi Narciarskie Baca/Baca Ski Resort New Page</p>
 
 <p>The newest project.</p>
-Without Bootstrap and jQuery.
-Subpage loaded by AJAX.
-CSS written in SASS (SCSS).
+<p>Without Bootstrap and jQuery.</p>
+<p>Subpage loaded by AJAX.</p>
+<p> CSS written in SASS (SCSS).</p>
