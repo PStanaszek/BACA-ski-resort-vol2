@@ -121,3 +121,11 @@ newHTML();
     }
 })();
 
+(function refreshPage(){
+    let logo = document.querySelector(".logo")
+        logo.onclick = function(){
+        window.location.reload();
+        
+    }
+})();
+

@@ -68,10 +68,10 @@ nav {
     padding: 0 10px 0 10px;
     /* Large Devices, Wide Screens */
     /* Medium Devices, Desktops */ }
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 73em) {
       .logo img {
         max-width: 260px; } }
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: 50em) {
       .logo img {
         width: 230px; } }
   .logo:hover {
@@ -113,10 +113,10 @@ nav {
       color: black;
       text-decoration: none;
       padding: 0px 5px 0px 5px; }
-      @media only screen and (min-width: 1200px) {
+      @media only screen and (min-width: 73em) {
         .top-nav li a {
           font-size: 18px; } }
-      @media only screen and (min-width: 992px) {
+      @media only screen and (min-width: 50em) {
         .top-nav li a {
           font-size: 16px; } }
   .top-nav li:hover {
@@ -185,15 +185,7 @@ nav {
   align-items: flex-start;
   border: 1ps solid black;
   height: 100%;
-  flex-direction: row;
-  /* Large Devices, Wide Screens */
-  /* Medium Devices, Desktops */ }
-  @media only screen and (min-width: 1200px) {
-    .container {
-      flex-direction: row; } }
-  @media only screen and (min-width: 992px) {
-    .container {
-      font-size: 30px; } }
+  flex-direction: row; }
 
 .container-center {
   display: flex;
@@ -203,10 +195,10 @@ nav {
   align-items: flex-start;
   border: 1ps solid black;
   height: 100%;
-  width: 60%; }
+  width: 65%; }
 
 .container-right {
-  width: 20%;
+  width: 15%;
   padding-right: 10px; }
 
 .container-left {
@@ -256,18 +248,23 @@ nav {
     align-items: center;
     justify-content: center;
     border: 4px solid rgba(0, 0, 0, 0.3);
-    height: 30px;
-    width: 30px;
+    height: 60px;
+    width: 60px;
     /* Large Devices, Wide Screens */
+    /* Medium Devices, Desktops */
     /* Small Devices, Tablets */ }
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 73em) {
       .right-nav li {
         height: 120px;
         width: 120px; } }
-    @media only screen and (min-width: 860px) {
+    @media only screen and (min-width: 50em) {
       .right-nav li {
         height: 110px;
         width: 110px; } }
+    @media only screen and (min-width: 46.8em) {
+      .right-nav li {
+        height: 90px;
+        width: 90px; } }
     .right-nav li:hover {
       border: 4px solid #e75436; }
     .right-nav li a {
@@ -292,31 +289,31 @@ nav {
       margin-top: 0px;
       text-align: center;
       color: white;
-      font-size: 7px;
-      /* Large Devices, Wide Screens */
-      /* Small Devices, Tablets */
-      /* Extra Small Devices, Phones */ }
-      @media only screen and (min-width: 1200px) {
-        .right-nav li a {
-          font-size: 26px; } }
-      @media only screen and (min-width: 860px) {
-        .right-nav li a {
-          font-size: 16px; } }
-      @media only screen and (min-width: 480px) {
-        .right-nav li a {
-          font-size: 14px; } }
-    .right-nav li img {
-      max-width: 12px;
+      font-size: 9px;
       /* Large Devices, Wide Screens */
       /* Medium Devices, Desktops */
       /* Small Devices, Tablets */ }
-      @media only screen and (min-width: 1200px) {
+      @media only screen and (min-width: 73em) {
+        .right-nav li a {
+          font-size: 22px; } }
+      @media only screen and (min-width: 50em) {
+        .right-nav li a {
+          font-size: 16px; } }
+      @media only screen and (min-width: 46.8em) {
+        .right-nav li a {
+          font-size: 12px; } }
+    .right-nav li img {
+      max-width: 16px;
+      /* Large Devices, Wide Screens */
+      /* Medium Devices, Desktops */
+      /* Small Devices, Tablets */ }
+      @media only screen and (min-width: 73em) {
         .right-nav li img {
           max-width: 40px; } }
-      @media only screen and (min-width: 992px) {
+      @media only screen and (min-width: 50em) {
         .right-nav li img {
           max-width: 30px; } }
-      @media only screen and (min-width: 860px) {
+      @media only screen and (min-width: 46.8em) {
         .right-nav li img {
           max-width: 25px; } }
 
@@ -344,10 +341,10 @@ nav {
     text-shadow: 3px 0px 1px rgba(0, 0, 0, 0.5);
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 30px; }
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 73em) {
       .content .content-title {
         font-size: 35px; } }
-    @media only screen and (min-width: 860px) {
+    @media only screen and (min-width: 46.8em) {
       .content .content-title {
         font-size: 30px; } }
 
@@ -376,9 +373,10 @@ nav {
     background-color: white;
     align-content: space-around;
     justify-content: space-between;
-    height: 280px;
+    height: 180px;
     /* Large Devices, Wide Screens */
     /* Medium Devices, Desktops */
+    /* Small Devices, Tablets */
     list-style-type: none;
     text-align: center;
     width: 45%;
@@ -387,16 +385,19 @@ nav {
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 black;
     /*transition-duration: 10s;*/ }
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 73em) {
       .price-container .price {
         height: 350px; } }
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: 50em) {
       .price-container .price {
         height: 350px; } }
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 46.8em) {
+      .price-container .price {
+        height: 300px; } }
+    @media only screen and (min-width: 73em) {
       .price-container .price {
         width: 30%; } }
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: 50em) {
       .price-container .price {
         width: 35%; } }
     .price-container .price .price-item {
@@ -412,10 +413,10 @@ nav {
       /* Medium Devices, Desktops */
       background-color: grey;
       background: linear-gradient(to bottom, white, lightgray); }
-      @media only screen and (min-width: 1200px) {
+      @media only screen and (min-width: 73em) {
         .price-container .price .price-item:nth-child(odd) {
           font-size: 22px; } }
-      @media only screen and (min-width: 992px) {
+      @media only screen and (min-width: 50em) {
         .price-container .price .price-item:nth-child(odd) {
           font-size: 16px; } }
     .price-container .price .price-item:nth-child(even) {
@@ -425,10 +426,10 @@ nav {
       /* Medium Devices, Desktops */
       background: linear-gradient(to right top, #1a1a1a, #525252);
       color: #e75436; }
-      @media only screen and (min-width: 1200px) {
+      @media only screen and (min-width: 73em) {
         .price-container .price .price-item:nth-child(even) {
           font-size: 26px; } }
-      @media only screen and (min-width: 992px) {
+      @media only screen and (min-width: 50em) {
         .price-container .price .price-item:nth-child(even) {
           font-size: 26px; } }
     .price-container .price .price-item:nth-child(1) {
@@ -477,12 +478,12 @@ nav {
   padding: 7px;
   transition-duration: 0.5s;
   cursor: pointer; }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 73em) {
     .weather {
       font-size: 22px;
       height: 90px;
       width: 90px; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 50em) {
     .weather {
       font-size: 16px;
       height: 90px;
@@ -515,10 +516,10 @@ nav {
     padding-right: 5px;
     /* Large Devices, Wide Screens */
     /* Medium Devices, Desktops */ }
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 73em) {
       .weather img {
         height: 40px; } }
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: 50em) {
       .weather img {
         height: 35px; } }
 
@@ -564,10 +565,10 @@ nav {
   font-size: 10px;
   /* Large Devices, Wide Screens */
   /* Medium Devices, Desktops */ }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 73em) {
     .temp {
       font-size: 26px; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 50em) {
     .temp {
       font-size: 20px; } }
 
@@ -596,23 +597,24 @@ nav {
     width: auto;
     /* Large Devices, Wide Screens */
     /* Medium Devices, Desktops */ }
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 73em) {
       .conditions img, .skilift img {
         height: 30px;
         width: auto; } }
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: 50em) {
       .conditions img, .skilift img {
         height: 30px;
         width: auto; } }
   .conditions tr, .conditions td, .conditions th, .skilift tr, .skilift td, .skilift th {
     padding: 2px;
     text-align: center;
+    font-size: 12px;
     /* Large Devices, Wide Screens */
     /* Medium Devices, Desktops */ }
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 73em) {
       .conditions tr, .conditions td, .conditions th, .skilift tr, .skilift td, .skilift th {
         font-size: 22px; } }
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: 50em) {
       .conditions tr, .conditions td, .conditions th, .skilift tr, .skilift td, .skilift th {
         font-size: 18px;
         padding: 5px; } }
@@ -678,11 +680,11 @@ nav {
   height: 12vw;
   /* Large Devices, Wide Screens */
   /* Medium Devices, Desktops */ }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 73em) {
     .galleryImg {
       width: 12vw;
       height: 10vw; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 50em) {
     .galleryImg {
       width: 12vw;
       height: 10vw; } }
@@ -773,12 +775,12 @@ nav {
   text-align: center;
   font-size: 16px;
   color: black; }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 73em) {
     .skirent-item {
       width: 220px;
       height: 220px;
       font-size: 16px; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 50em) {
     .skirent-item {
       width: 200px;
       height: 200px;
@@ -829,6 +831,20 @@ nav {
   padding: 10px;
   width: 50%;
   background-color: rgba(255, 255, 255, 0.8); }
+  .firstpage-content .firstpage-title {
+    font-size: 16px;
+    /* Large Devices, Wide Screens */
+    /* Medium Devices, Desktops */
+    /* Small Devices, Tablets */ }
+    @media only screen and (min-width: 73em) {
+      .firstpage-content .firstpage-title {
+        font-size: 25px; } }
+    @media only screen and (min-width: 50em) {
+      .firstpage-content .firstpage-title {
+        font-size: 18px; } }
+    @media only screen and (min-width: 46.8em) {
+      .firstpage-content .firstpage-title {
+        font-size: 16px; } }
   .firstpage-content .firstpage-items {
     width: 100%;
     display: flex;
@@ -838,10 +854,10 @@ nav {
     font-size: 12px;
     /* Large Devices, Wide Screens */
     /* Medium Devices, Desktops */ }
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 73em) {
       .firstpage-content .firstpage-items {
         font-size: 23px; } }
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: 50em) {
       .firstpage-content .firstpage-items {
         font-size: 18px; } }
     .firstpage-content .firstpage-items img {

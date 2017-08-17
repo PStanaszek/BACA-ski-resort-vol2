@@ -68,31 +68,35 @@ $border-color: black;
     border: $border;
     margin-top: 50px;
 }
+$bp-small : 24em;
+$bp-sm : 46.8em;
+$bp-md : 50em;
+$bp-lg : 73em;
 
 @mixin xs {
     /* Extra Small Devices, Phones */
-    @media only screen and (min-width: 480px) {
+    @media only screen and (min-width: $bp-small) {
         @content;
     }
 }
 
 @mixin sm {
     /* Small Devices, Tablets */
-    @media only screen and (min-width: 860px) {
+    @media only screen and (min-width: $bp-sm) {
         @content;
     }
 }
 
 @mixin md {
     /* Medium Devices, Desktops */
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: $bp-md) {
         @content;
     }
 }
 
 @mixin lg {
     /* Large Devices, Wide Screens */
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: $bp-lg) {
         @content;
     }
 }
@@ -131,7 +135,7 @@ nav {
     width: 40%;
     margin: 5px 40px 0px 0px;
     border: $border;
-    
+
 
     img {
         align-content: flex-start;
@@ -151,7 +155,7 @@ nav {
     &:hover{
         cursor: pointer;
     }
-     
+
 }
 
 .top-nav {
@@ -272,25 +276,15 @@ nav {
     @include container;
 
     flex-direction: row;
-
-    @include lg {
-        flex-direction: row;
-    }
-
-
-    @include md {
-        font-size: 30px;
-    }
 }
 
 .container-center {
     @include container;
-
-    width: 60%;
+    width: 65%;
 }
 
 .container-right {
-    width: 20%;
+    width: 15%;
     padding-right: 10px;
 }
 
@@ -334,19 +328,23 @@ nav {
         align-items: center;
         justify-content: center;
         border: 4px solid rgba(0, 0, 0, 0.3);
-        height: 30px;
-        width: 30px;
-
+        height: 60px;
+        width: 60px;
         @include lg {
             height: 120px;
             width: 120px;
         }
 
 
-        @include sm {
+        @include md {
             height: 110px;
             width: 110px;
         }
+        @include sm {
+            height: 90px;
+            width: 90px;
+        }
+
 
 
 
@@ -363,25 +361,22 @@ nav {
             margin-top: 0px;
             text-align: center;
             color: white;
-            font-size: 7px;
+            font-size: 9px;
 
             @include lg {
-                font-size: 26px;
+                font-size: 22px;
             }
-
-
-            @include sm {
+            @include md {
                 font-size: 16px;
             }
 
-
-            @include xs {
-                font-size: 14px;
+            @include sm {
+                font-size: 12px;
             }
         }
 
         img {
-            max-width: 12px;
+            max-width: 16px;
 
             @include lg {
                 max-width: 40px;
@@ -447,7 +442,7 @@ nav {
         background-color: white;
         align-content: space-around;
         justify-content: space-between;
-        height: 280px;
+        height: 180px;
 
         @include lg {
             height: 350px;
@@ -456,6 +451,9 @@ nav {
 
         @include md {
             height: 350px;
+        }
+        @include sm {
+            height: 300px;
         }
 
 
@@ -733,6 +731,7 @@ nav {
     tr, td, th {
         padding: 2px;
         text-align: center;
+        font-size: 12px;
         @include lg {
             font-size: 22px;
         }
@@ -743,7 +742,7 @@ nav {
             padding: 5px;
         }
 
-    
+
     }
 
     th {
@@ -993,7 +992,26 @@ nav {
     padding: 10px;
     width: 50%;
     background-color: rgba(255, 255, 255, 0.8);
+    .firstpage-title{
+        font-size: 16px;
+        @include lg {
 
+            font-size: 25px;
+        }
+
+
+        @include md {
+
+            font-size: 18px;
+        }
+        
+          @include sm {
+
+            font-size: 16px;
+        }
+
+
+    }
     .firstpage-items{
         width: 100%;
         display: flex;
@@ -1011,10 +1029,14 @@ nav {
 
             font-size: 18px;
         }
+        
+        
         img{
             margin-right: 10%;
             width: 8%;
         }
     }
+
+
 }
 /*contact section styles*/
